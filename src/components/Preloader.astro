@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import preloaderLogo from "../assets/images/logos/preloader-logo.svg";
+---
+
+<!-- Preloader Start -->
+<div class="preloader">
+  <div class="loading-container">
+    <div class="loading"></div>
+    <div id="loading-icon">
+      <Image src={preloaderLogo} alt="BodyByAls Logo" />
+    </div>
+  </div>
+</div>
+<!-- Preloader End -->

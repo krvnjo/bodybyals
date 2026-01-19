@@ -1,0 +1,18 @@
+{
+  "printWidth": 120,
+  "bracketSameLine": true,
+  "plugins": [
+    "prettier-plugin-organize-attributes"
+  ],
+  "attributeGroups": [
+    "^(type|id|name|for)$",
+    "^(rel|target)$",
+    "^(src|href|alt)$",
+    "^(value|placeholder)$",
+    "^data-.*$",
+    "^aria-.*$",
+    "^(class|style)$",
+    "^(disabled|required|checked)$",
+    "^on.*$"
+  ]
+}

@@ -1,0 +1,132 @@
+---
+import { Image } from "astro:assets";
+import footerLogo from "../assets/images/logos/logo.svg";
+import locationIcon from "../assets/images/icons/icon-location-accent.svg";
+import phoneIcon from "../assets/images/icons/icon-phone-accent.svg";
+import mailIcon from "../assets/images/icons/icon-mail-accent.svg";
+
+const year = new Date().getFullYear();
+---
+
+<!-- Footer Start -->
+<footer id="footer" class="main-footer-royal bg-section dark-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <!-- About Footer Start -->
+        <div class="about-footer-royal">
+          <!-- Footer Logo Start -->
+          <div class="footer-logo-royal">
+            <Image src={footerLogo} alt="" />
+          </div>
+          <!-- Footer Logo End -->
+
+          <!-- About Footer Content Start -->
+          <div class="about-footer-content-royal">
+            <p>
+              Transforming lives through sustainable fitness and nutrition with balance and consistency, empowering you
+              to maintain healthy habits for life.
+            </p>
+          </div>
+          <!-- About Footer Content End -->
+        </div>
+        <!-- About Footer End -->
+      </div>
+
+      <div class="col-lg-8">
+        <!-- Footer Links Box Start -->
+        <div class="footer-links-box-royal">
+          <!-- Footer Links Start -->
+          <div class="footer-links-royal">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Transformations</a></li>
+              <li><a href="#">Get Started</a></li>
+            </ul>
+          </div>
+          <!-- Footer Links End -->
+
+          <!-- Footer Links Start -->
+          <div class="footer-links-royal">
+            <h3>Support</h3>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Refund Policy</a></li>
+            </ul>
+          </div>
+          <!-- Footer Links End -->
+
+          <!-- Footer Links Start -->
+          <div class="footer-links-royal footer-contact-links-royal">
+            <h3>Get In touch</h3>
+            <ul>
+              <li>
+                <Image src={locationIcon} alt="" />
+                123 Ayala Avenue, Makati City, Metro Manila, Philippines
+              </li>
+              <li>
+                <Image src={phoneIcon} alt="" />
+                <a href="tel:+639181234567">+63 918 123 4567</a>
+              </li>
+              <li>
+                <Image src={mailIcon} alt="" />
+                <a class="text-lowercase" href="mailto:bodybyals@domain.com">bodybyals@domain.com</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Footer Links End -->
+        </div>
+        <!-- Footer Links Box End -->
+      </div>
+
+      <div class="col-lg-12">
+        <!-- Footer Copyright Start -->
+        <div class="footer-copyright-elite">
+          <!-- Footer Copyright Text Start -->
+          <div class="footer-copyright-text-elite">
+            <p>© {year} BodyByAls. All Rights Reserved.</p>
+          </div>
+          <!-- Footer Copyright Text End -->
+
+          <!-- Footer Social Link Start -->
+          <div class="footer-social-links-elite">
+            <h3>Follow Us On Socials:</h3>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/BODYBYALS" target="_blank">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/bodybyals/" target="_blank">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.tiktok.com/@bodybyals" target="_blank">
+                  <i class="fa-brands fa-tiktok"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.threads.com/@bodybyals?xmt=AQF0-Wsfdj1zmUVDy4x-itGYnUPm8_hXjDRUmA05tXUSEG4"
+                  target="_blank">
+                  <i class="fa-brands fa-threads"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Footer Social Link End -->
+        </div>
+        <!-- Footer Copyright End -->
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Footer End -->

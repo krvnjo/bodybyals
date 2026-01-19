@@ -1,0 +1,26 @@
+# AppZen Documentation
+
+## Documentation
+
+To view documentation, go to the documentation folder and open `index.html` in your browser.
+
+Or read here live: https://html.awaikenthemes.com/appzen/documentation/
+
+## HTML Folder
+
+HTML folders contain layout of landing page, sub pages, HTML files and folders.
+
+---
+
+## Installation
+
+Upload folder to web server or local server to test.
+
+## Dependencies
+
+Contact form does not work on local server. It only works when you host at a live server.
+
+---
+
+**Note:** The images used in the template are not included in the main download file, they are only for the preview
+purpose.
