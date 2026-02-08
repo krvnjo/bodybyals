@@ -65,8 +65,8 @@
   --divider-color: #0e0e0e1a;
   --dark-divider-color: #ffffff1a;
   --error-color: rgb(230, 87, 87);
-  --default-font: "Playfair Display";
-  --secondary-font: "Inter Tight";
+  --default-font: "Inter Tight";
+  --secondary-font: "Playfair Display";
 }
 
 /************************************/
@@ -80,7 +80,7 @@ body {
 }
 
 body {
-  font-family: var(--default-font), sans-serif;
+  font-family: var(--default-font), var(--secondary-font), sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1em;
