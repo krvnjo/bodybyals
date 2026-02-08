@@ -1,0 +1,141 @@
+---
+const faqs = [
+  {
+    question: "Is BODYBYALS suitable for beginners?",
+    answer:
+      "Yes, BODYBYALS is beginner-friendly. Our workouts are easy to follow, with proper form guidance and progressions based on your level, lifestyle, and goals.",
+  },
+  {
+    question: "Can I do BODYBYALS even if I’m busy or working full-time?",
+    answer:
+      "Absolutely. Our program is designed for busy individuals. You can train at home or anywhere, at your own time and pace. We have clients all over the world including the Philippines, USA, Dubai, Singapore, Australia, and many more so the program works across different schedules and time zones.",
+  },
+  {
+    question: "Is this program suitable for PCOS, insulin resistance, or postpartum clients?",
+    answer:
+      "Yes, BODYBYALS focuses on controlling hormones and improving insulin sensitivity through proper training and nutrition.",
+  },
+  {
+    question: "Do I need gym equipment?",
+    answer:
+      "For beginners, we don’t recommend lifting weights right away to prevent injuries. We start with bodyweight exercises to build proper form and foundation. For clients who already know how to work out, we can include weights based on your capacity and experience.",
+  },
+];
+---
+
+<!-- Faqs Section Start -->
+<section id="faqs" class="our-faqs">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-5">
+        <!-- Faqs Content Box Start -->
+        <div class="faqs-content-box">
+          <!-- Faqs Content Start -->
+          <div class="faqs-content">
+            <!-- Section Title Start -->
+            <div class="section-title">
+              <h3 class="wow fadeInUp">Frequently Asked Questions</h3>
+              <h2 data-cursor="-opaque" class="text-anime-style-3">All the answers you need to get started</h2>
+              <p data-wow-delay="0.2s" class="wow fadeInUp">
+                Whether you're curious about setup, features, or troubleshooting, our FAQ section covers everything you
+                need for a smooth and seamless experience.
+              </p>
+            </div>
+            <!-- Section Title End -->
+
+            <!-- Faqs Button Start -->
+            <div data-wow-delay="0.4s" class="faq-btn wow fadeInUp">
+              <a href="#" class="btn-default">View all FAQ's</a>
+            </div>
+            <!-- Faqs Button End -->
+          </div>
+          <!-- Faqs Content End -->
+
+          <!-- Faqs CTA Box Start -->
+          <div data-wow-delay="0.6s" class="faqs-cta-box wow fadeInUp">
+            <!-- Faqs CTA Box Header Start -->
+            <div class="faqs-cta-box-header">
+              <div class="faqs-cta-box-counter">
+                <h2><span class="counter">4.9</span>/5.0</h2>
+              </div>
+              <div class="faqs-cta-box-counter-content">
+                <p>Loved by clients world-wide</p>
+              </div>
+            </div>
+            <!-- Faqs CTA Box Header End -->
+
+            <!-- Faqs CTA Box Body Start -->
+            <div class="faqs-cta-body">
+              <div class="faqs-cta-body-content">
+                <p>User Satisfaction Rating</p>
+              </div>
+              <!-- Satisfy Client Images Start -->
+              <div class="satisfy-client-images">
+                <div class="satisfy-client-image">
+                  <figure class="image-anime">
+                    <img src="https://placehold.co/50x50" alt="" />
+                  </figure>
+                </div>
+                <div class="satisfy-client-image">
+                  <figure class="image-anime">
+                    <img src="https://placehold.co/50x50" alt="" />
+                  </figure>
+                </div>
+                <div class="satisfy-client-image">
+                  <figure class="image-anime">
+                    <img src="https://placehold.co/50x50" alt="" />
+                  </figure>
+                </div>
+                <div class="satisfy-client-image">
+                  <figure class="image-anime">
+                    <img src="https://placehold.co/50x50" alt="" />
+                  </figure>
+                </div>
+              </div>
+              <!-- Satisfy Client Images End -->
+            </div>
+            <!-- Faqs CTA Box Body End -->
+          </div>
+          <!-- Faqs CTA Box End -->
+        </div>
+        <!-- Faqs Content Box End -->
+      </div>
+
+      <div class="col-xl-7">
+        <!-- FAQ Accordion Start -->
+        <div id="accordion" class="faq-accordion">
+          <!-- FAQ Item Start -->
+          {
+            faqs.map((faq, index) => (
+              <div data-wow-delay={index !== 0 ? `${index * 0.2}s` : undefined} class="accordion-item wow fadeInUp">
+                <h2 id={`heading${index + 1}`} class="accordion-header">
+                  <button
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target={`#collapse${index + 1}`}
+                    aria-expanded={index === 0 ? "true" : "false"}
+                    aria-controls={`collapse${index + 1}`}
+                    class={`accordion-button ${index !== 0 ? "collapsed" : ""}`}>
+                    Q{index + 1}. {faq.question}
+                  </button>
+                </h2>
+                <div
+                  id={`collapse${index + 1}`}
+                  data-bs-parent="#accordion"
+                  aria-labelledby={`heading${index + 1}`}
+                  class={`accordion-collapse collapse ${index === 0 ? "show" : ""}`}>
+                  <div class="accordion-body">
+                    <p>{faq.answer}</p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+          <!-- FAQ Item End -->
+        </div>
+        <!-- FAQ Accordion End -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Faqs Section End -->

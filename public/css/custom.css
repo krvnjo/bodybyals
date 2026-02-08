@@ -8,3 +8,11 @@
   padding: 200px 0 0;
   margin-top: 20px;
 }
+
+.service-footer-text {
+  color: #4b5563 !important;
+}
+
+.service-footer-text:hover {
+  color: #0e0e0e !important;
+}

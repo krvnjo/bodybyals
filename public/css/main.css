@@ -1991,7 +1991,7 @@ header.main-header .header-sticky.active {
 
 .interface-slider-image img {
   width: 100%;
-  aspect-ratio: 1 / 2.16;
+  aspect-ratio: 1 / 1.7;
   object-fit: cover;
   border: 1px solid var(--divider-color);
   border-radius: 20px;

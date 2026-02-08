@@ -1,187 +1,98 @@
 ---
+import { Dumbbell, Headset, LandPlot, MessagesSquare } from "@lucide/astro/icons/index";
 
+const services = [
+  {
+    title: "Online Fitness Coaching",
+    description:
+      "Easy-to-follow workouts designed to help you use proper form, build confidence, and stay consistent. Each program is tailored to your lifestyle and goals.",
+    tag: "All Fitness Levels",
+    icon: Dumbbell,
+    delay: null,
+  },
+  {
+    title: "Personalized Nutrition Plan",
+    description:
+      "Learn what to eat, when to eat, and what to avoid while still enjoying your favorite foods — all guided by Coach Anton.",
+    tag: "Flexible Eating",
+    icon: LandPlot,
+    delay: "0.2s",
+  },
+  {
+    title: "Chat Support",
+    description: "Share your meal photos and progress updates anytime, and we'll guide you every step of the way.",
+    tag: "Real-Time Feedback",
+    icon: MessagesSquare,
+    delay: "0.4s",
+  },
+  {
+    title: "Free Consultation",
+    description:
+      "Not sure where to start? Book a free consultation to understand the program and get all your questions answered.",
+    tag: "Goal Assessment",
+    icon: Headset,
+    delay: "0.6s",
+  },
+];
+
+const footerTags = ["Weight Loss", "Body Transformation", "Custom Meal Plans", "Fitness Coaching"];
 ---
 
-<!-- Services Section Start-->
-<section class="our-features-elite bg-section">
+<section id="services" class="our-features-elite bg-section">
   <div class="container">
     <div class="row section-row">
       <div class="col-lg-12">
-        <!-- Section Title Start -->
         <div class="section-title section-title-center">
           <h3 class="wow fadeInUp">Services</h3>
           <h2 data-cursor="-opaque" class="text-anime-style-3">
             Train anywhere with workouts and nutrition that fit your lifestyle
           </h2>
         </div>
-        <!-- Section Title End -->
       </div>
     </div>
 
     <div class="row">
-      <div class="col-xl-3 col-md-6">
-        <!-- Features Item Start -->
-        <div class="features-item-elite wow fadeInUp">
-          <!-- Features Item Content Start -->
-          <div class="features-item-content-elite">
-            <!-- Features Item Header Start -->
-            <div class="features-item-header-elite">
-              <div class="features-item-title-elite">
-                <h3>Mobile App Development</h3>
+      {
+        services.map((service) => (
+          <div class="col-xl-3 col-md-6">
+            <div data-wow-delay={service.delay} class="features-item-elite wow fadeInUp">
+              <div class="features-item-content-elite">
+                <div class="features-item-header-elite">
+                  <div class="features-item-title-elite">
+                    <h3>{service.title}</h3>
+                  </div>
+                  <div class="icon-box">
+                    <service.icon color="#0E0E0E" stroke-width="1.5" />
+                  </div>
+                </div>
+                <div class="features-item-body-elite">
+                  <p>{service.description}</p>
+                </div>
               </div>
-              <div class="icon-box">
-                <img src="/images/icon-features-1-elite.svg" alt="" />
-              </div>
-            </div>
-            <!-- Features Item Header End -->
-
-            <!-- Features Item Body Start -->
-            <div class="features-item-body-elite">
-              <p>Your information is encrypted and stored safely with advanced.</p>
-            </div>
-            <!-- Features Item Body End -->
-          </div>
-          <!-- Features Item Content End -->
-
-          <!-- Features Item Tag List Start -->
-          <div class="features-item-tag-list-elite">
-            <ul>
-              <li>Modern App Design</li>
-            </ul>
-          </div>
-          <!-- Features Item Tag List End -->
-        </div>
-        <!-- Features Item End -->
-      </div>
-
-      <div class="col-xl-3 col-md-6">
-        <!-- Features Item Start -->
-        <div data-wow-delay="0.2s" class="features-item-elite wow fadeInUp">
-          <!-- Features Item Content Start -->
-          <div class="features-item-content-elite">
-            <!-- Features Item Header Start -->
-            <div class="features-item-header-elite">
-              <div class="features-item-title-elite">
-                <h3>App Store Optimization</h3>
-              </div>
-              <div class="icon-box">
-                <img src="/images/icon-features-2-elite.svg" alt="" />
+              <div class="features-item-tag-list-elite">
+                <ul>
+                  <li>{service.tag}</li>
+                </ul>
               </div>
             </div>
-            <!-- Features Item Header End -->
-
-            <!-- Features Item Body Start -->
-            <div class="features-item-body-elite">
-              <p>Your information is encrypted and stored safely with advanced.</p>
-            </div>
-            <!-- Features Item Body End -->
           </div>
-          <!-- Features Item Content End -->
-
-          <!-- Features Item Tag List Start -->
-          <div class="features-item-tag-list-elite">
-            <ul>
-              <li>Digital Innovation</li>
-            </ul>
-          </div>
-          <!-- Features Item Tag List End -->
-        </div>
-        <!-- Features Item End -->
-      </div>
-
-      <div class="col-xl-3 col-md-6">
-        <!-- Features Item Start -->
-        <div data-wow-delay="0.4s" class="features-item-elite wow fadeInUp">
-          <!-- Features Item Content Start -->
-          <div class="features-item-content-elite">
-            <!-- Features Item Header Start -->
-            <div class="features-item-header-elite">
-              <div class="features-item-title-elite">
-                <h3>App Testing & Quality</h3>
-              </div>
-              <div class="icon-box">
-                <img src="/images/icon-features-3-elite.svg" alt="" />
-              </div>
-            </div>
-            <!-- Features Item Header End -->
-
-            <!-- Features Item Body Start -->
-            <div class="features-item-body-elite">
-              <p>Your information is encrypted and stored safely with advanced.</p>
-            </div>
-            <!-- Features Item Body End -->
-          </div>
-          <!-- Features Item Content End -->
-
-          <!-- Features Item Tag List Start -->
-          <div class="features-item-tag-list-elite">
-            <ul>
-              <li>App Maintenance</li>
-            </ul>
-          </div>
-          <!-- Features Item Tag List End -->
-        </div>
-        <!-- Features Item End -->
-      </div>
-
-      <div class="col-xl-3 col-md-6">
-        <!-- Features Item Start -->
-        <div data-wow-delay="0.6s" class="features-item-elite wow fadeInUp">
-          <!-- Features Item Content Start -->
-          <div class="features-item-content-elite">
-            <!-- Features Item Header Start -->
-            <div class="features-item-header-elite">
-              <div class="features-item-title-elite">
-                <h3>Web App Development</h3>
-              </div>
-              <div class="icon-box">
-                <img src="/images/icon-features-4-elite.svg" alt="" />
-              </div>
-            </div>
-            <!-- Features Item Header End -->
-
-            <!-- Features Item Body Start -->
-            <div class="features-item-body-elite">
-              <p>Your information is encrypted and stored safely with advanced.</p>
-            </div>
-            <!-- Features Item Body End -->
-          </div>
-          <!-- Features Item Content End -->
-
-          <!-- Features Item Tag List Start -->
-          <div class="features-item-tag-list-elite">
-            <ul>
-              <li>Quality Assurance</li>
-            </ul>
-          </div>
-          <!-- Features Item Tag List End -->
-        </div>
-        <!-- Features Item End -->
-      </div>
+        ))
+      }
 
       <div class="col-lg-12">
-        <!-- Features Footer Elite Start -->
         <div data-wow-delay="0.4s" class="features-footer-elite wow fadeInUp">
-          <!-- Features Footer List Start -->
           <div class="features-footer-list-elite">
             <ul>
-              <li>Smart Organizer</li>
-              <li>Time Management App</li>
-              <li>Digital Planner</li>
-              <li>Productivity Software</li>
+              {footerTags.map((tag) => <li>{tag}</li>)}
             </ul>
           </div>
-          <!-- Features Footer List End -->
-
-          <!-- Section Footer Text Start -->
           <div class="section-footer-text">
-            <p>Let's make something great work together. <a href="#">Get Free Quote</a></p>
+            <p>
+              Ready to start your transformation? <a href="#" class="service-footer-text">Book Free Consultation</a>
+            </p>
           </div>
-          <!-- Section Footer Text End -->
         </div>
-        <!-- Features Footer Elite End -->
       </div>
     </div>
   </div>
 </section>
-<!-- Services Section End-->

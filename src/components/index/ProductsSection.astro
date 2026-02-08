@@ -1,0 +1,83 @@
+---
+const products = [
+  {
+    image: "https://placehold.co/450x340",
+    counter: "0",
+    suffix: "g carbs",
+    title: "Dry Shirataki Rice",
+    description:
+      "Low-carb rice alternative made from konjac. Virtually calorie-free, high in fiber, and easy to prepare.",
+    delay: null,
+  },
+  {
+    image: "https://placehold.co/450x340",
+    counter: "15",
+    suffix: "g protein",
+    title: "Keto Bread",
+    description:
+      "Low-carb, high-protein bread made with almond flour. Perfect for sandwiches, toast, or your favorite spreads.",
+    delay: "0.2s",
+  },
+  {
+    image: "https://placehold.co/450x340",
+    counter: "100",
+    suffix: "%",
+    title: "Meal Plan",
+    description:
+      "Low-carb, high-protein meals designed to balance hormones, not count calories. Juicy, tasty, and filling.",
+    delay: "0.4s",
+  },
+];
+---
+
+<section id="products" class="our-key-fact bg-section dark-section">
+  <div class="container">
+    <div class="row section-row">
+      <div class="col-lg-12">
+        <div class="section-title section-title-center">
+          <h3 class="wow fadeInUp">Our Products</h3>
+          <h2 data-cursor="-opaque" class="text-anime-style-3">
+            Eat the foods you love while staying on track with your goals
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      {
+        products.map((product) => (
+          <div class="col-xl-4 col-md-6">
+            <div data-wow-delay={product.delay} class="key-fact-item wow fadeInUp">
+              <div class="key-fact-item-image">
+                <figure>
+                  <img src={product.image} alt={product.title} />
+                </figure>
+              </div>
+              <div class="key-fact-item-body">
+                <div class="key-fact-item-counter">
+                  <h2>
+                    <span class="counter">{product.counter}</span>
+                    {product.suffix}
+                  </h2>
+                </div>
+                <div class="key-fact-item-content">
+                  <h3>{product.title}</h3>
+                  <p>{product.description}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="col-lg-12">
+      <div data-wow-delay="0.4s" class="section-footer-text wow fadeInUp">
+        <p>
+          <span>Shop</span> Pair with BodyByAls Online Coaching for real results.
+          <a href="#">Buy Now</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
