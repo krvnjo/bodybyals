@@ -36,10 +36,10 @@
   color: #eab308 !important;
 }
 
-.btn-default.btn-arrow-light:hover::before {
-  filter: none !important;
+.faq-btn .btn-default:hover::before {
   background: url("../images/arrow-light.svg") no-repeat center center !important;
   background-size: cover !important;
+  filter: none !important;
 }
 
 .hero-elite .section-title h1,
