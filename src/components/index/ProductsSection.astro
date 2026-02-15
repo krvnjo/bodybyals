@@ -1,7 +1,12 @@
 ---
+import { Image } from "astro:assets";
+import ketoBreadImage from "@/assets/images/products/keto-bread.png";
+import shiratakiRice from "@/assets/images/products/shirataki-rice.png";
+import mealPlan from "@/assets/images/products/meal-plan.png";
+
 const products = [
   {
-    image: "https://placehold.co/450x340",
+    image: shiratakiRice,
     counter: "0",
     suffix: "g carbs",
     title: "Dry Shirataki Rice",
@@ -10,7 +15,7 @@ const products = [
     delay: null,
   },
   {
-    image: "https://placehold.co/450x340",
+    image: ketoBreadImage,
     counter: "15",
     suffix: "g protein",
     title: "Keto Bread",
@@ -19,7 +24,7 @@ const products = [
     delay: "0.2s",
   },
   {
-    image: "https://placehold.co/450x340",
+    image: mealPlan,
     counter: "100",
     suffix: "%",
     title: "Meal Plan",
@@ -50,7 +55,14 @@ const products = [
             <div data-wow-delay={product.delay} class="key-fact-item wow fadeInUp">
               <div class="key-fact-item-image">
                 <figure>
-                  <img src={product.image} alt={product.title} />
+                  <Image
+                    src={product.image}
+                    alt={product.title}
+                    width={450}
+                    height={340}
+                    loading="lazy"
+                    format="webp"
+                  />
                 </figure>
               </div>
               <div class="key-fact-item-body">
@@ -74,8 +86,8 @@ const products = [
     <div class="col-lg-12">
       <div data-wow-delay="0.4s" class="section-footer-text wow fadeInUp">
         <p>
-          <span>Shop</span> Pair with BodyByAls Online Coaching for real results.
-          <a href="#">Buy Now</a>
+          <span class="text-light">Shop</span> Pair with BodyByAls Online Coaching for real results.
+          <a href="#" class="link-light">Buy Now</a>
         </p>
       </div>
     </div>

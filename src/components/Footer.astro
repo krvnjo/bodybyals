@@ -1,9 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import footerLogo from "../assets/images/logos/logo.svg";
-import locationIcon from "../assets/images/icons/icon-location-accent.svg";
-import phoneIcon from "../assets/images/icons/icon-phone-accent.svg";
-import mailIcon from "../assets/images/icons/icon-mail-accent.svg";
+import footerLogo from "@/assets/images/logos/logo.svg";
+import locationIcon from "@/assets/images/icons/icon-location-light.svg";
+import phoneIcon from "@/assets/images/icons/icon-phone-light.svg";
+import mailIcon from "@/assets/images/icons/icon-mail-light.svg";
 
 const year = new Date().getFullYear();
 ---
@@ -130,3 +130,21 @@ const year = new Date().getFullYear();
   </div>
 </footer>
 <!-- Footer End -->
+
+<script>
+  document.querySelectorAll(".footer-links-royal h3").forEach((header) => {
+    header.addEventListener("click", () => {
+      const parent = header.parentElement;
+
+      // Close others
+      document.querySelectorAll(".footer-links-royal").forEach((item) => {
+        if (item !== parent) {
+          item.classList.remove("active");
+        }
+      });
+
+      // Toggle current
+      parent.classList.toggle("active");
+    });
+  });
+</script>

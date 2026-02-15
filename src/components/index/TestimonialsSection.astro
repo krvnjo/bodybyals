@@ -1,4 +1,8 @@
 ---
+import avatar1 from "@/assets/images/avatars/avatar-1.png";
+import avatar2 from "@/assets/images/avatars/avatar-2.png";
+import avatar3 from "@/assets/images/avatars/avatar-3.png";
+
 const testimonials = [
   {
     name: "Dianne Russell",
@@ -53,8 +57,12 @@ const testimonials = [
                 testimonials.map((testimonial) => (
                   <div class="swiper-slide">
                     <div class="testimonial-item-elite testimonial-rating-box-royal">
-                      <div class="testimonial-company-logo-elite">
-                        <img src="/images/company-logo-1-elite.svg" alt="" />
+                      <div class="testimonial-item-rating">
+                        <i class="fa fa-solid fa-star" />
+                        <i class="fa fa-solid fa-star" />
+                        <i class="fa fa-solid fa-star" />
+                        <i class="fa fa-solid fa-star" />
+                        <i class="fa fa-solid fa-star" />
                       </div>
                       <div class="testimonial-item-body-elite">
                         <div class="testimonial-item-content-elite">
@@ -66,7 +74,7 @@ const testimonials = [
                             <p>{testimonial.job}</p>
                           </div>
                           <div class="testimonial-quote-elite">
-                            <img src="/images/testimonial-quote-elite.svg" alt="" />
+                            <img src="/images/testimonial-quote.svg" alt="" />
                           </div>
                         </div>
                       </div>
@@ -87,12 +95,17 @@ const testimonials = [
           <div class="satisfy-client-images">
             <div class="satisfy-client-image">
               <figure class="image-anime">
-                <img src="https://placehold.co/50x50" alt="" />
+                <img src={avatar1.src} alt="" />
               </figure>
             </div>
             <div class="satisfy-client-image">
               <figure class="image-anime">
-                <img src="https://placehold.co/50x50" alt="" />
+                <img src={avatar2.src} alt="" />
+              </figure>
+            </div>
+            <div class="satisfy-client-image">
+              <figure class="image-anime">
+                <img src={avatar3.src} alt="" />
               </figure>
             </div>
           </div>
@@ -108,7 +121,7 @@ const testimonials = [
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
             </li>
-            <li>Our 4200 Reviews</li>
+            <li>Our 1000+ Reviews</li>
           </ul>
         </div>
         <!-- Section Footer Text End -->

@@ -1,5 +1,20 @@
 ---
+import { Image } from "astro:assets";
+import transformation1 from "@/assets/images/transformations/transformation-1.jpg";
+import transformation2 from "@/assets/images/transformations/transformation-2.jpg";
+import transformation3 from "@/assets/images/transformations/transformation-3.jpg";
+import transformation4 from "@/assets/images/transformations/transformation-4.jpg";
+import transformation5 from "@/assets/images/transformations/transformation-5.jpg";
+import transformation6 from "@/assets/images/transformations/transformation-6.jpg";
 
+const transformations = [
+  transformation1,
+  transformation2,
+  transformation3,
+  transformation4,
+  transformation5,
+  transformation6,
+];
 ---
 
 <!-- Transformations Section Start -->
@@ -23,61 +38,22 @@
       <div class="our-interface-slider">
         <div class="swiper">
           <div data-cursor-text="Drag" class="swiper-wrapper">
-            <!-- Client Transformations Start -->
-            <div class="swiper-slide">
-              <div class="interface-slider-image">
-                <img src="https://placehold.co/500x850" alt="" />
-              </div>
-            </div>
-            <!-- Client Transformations End -->
-
-            <!-- Client Transformations Start -->
-            <div class="swiper-slide">
-              <div class="interface-slider-image">
-                <img src="https://placehold.co/500x850" alt="" />
-              </div>
-            </div>
-            <!-- Client Transformations End -->
-
-            <!-- Client Transformations Start -->
-            <div class="swiper-slide">
-              <div class="interface-slider-image">
-                <img src="https://placehold.co/500x850" alt="" />
-              </div>
-            </div>
-            <!-- Client Transformations End -->
-
-            <!-- Client Transformations Start -->
-            <div class="swiper-slide">
-              <div class="interface-slider-image">
-                <img src="https://placehold.co/500x850" alt="" />
-              </div>
-            </div>
-            <!-- Client Transformations End -->
-
-            <!-- Client Transformations Start -->
-            <div class="swiper-slide">
-              <div class="interface-slider-image">
-                <img src="https://placehold.co/500x850" alt="" />
-              </div>
-            </div>
-            <!-- Client Transformations End -->
-
-            <!-- Client Transformations Start -->
-            <div class="swiper-slide">
-              <div class="interface-slider-image">
-                <img src="https://placehold.co/500x850" alt="" />
-              </div>
-            </div>
-            <!-- Client Transformations End -->
-
-            <!-- Client Transformations Start -->
-            <div class="swiper-slide">
-              <div class="interface-slider-image">
-                <img src="https://placehold.co/500x850" alt="" />
-              </div>
-            </div>
-            <!-- Client Transformations End -->
+            {
+              transformations.map((image, index) => (
+                <div class="swiper-slide">
+                  <div class="interface-slider-image">
+                    <Image
+                      src={image}
+                      alt={`Client transformation ${index + 1}`}
+                      width={500}
+                      height={850}
+                      loading="lazy"
+                      format="webp"
+                    />
+                  </div>
+                </div>
+              ))
+            }
           </div>
           <div class="interface-pagination"></div>
         </div>

@@ -1,5 +1,10 @@
 ---
 import { Goal, HeartPulse } from "@lucide/astro/icons/index";
+import aboutImage from "../../assets/images/pictures/about-image.jpg";
+import avatar1 from "@/assets/images/avatars/avatar-1.png";
+import avatar2 from "@/assets/images/avatars/avatar-2.png";
+import avatar3 from "@/assets/images/avatars/avatar-3.png";
+import avatar4 from "@/assets/images/avatars/avatar-4.png";
 ---
 
 <!-- About Section Start -->
@@ -12,7 +17,7 @@ import { Goal, HeartPulse } from "@lucide/astro/icons/index";
           <!-- Faq Image Start -->
           <div class="faq-image-royal">
             <figure class="image-anime">
-              <img src="https://placehold.co/578x578" alt="" />
+              <img src={aboutImage.src} alt="" />
             </figure>
           </div>
           <!-- Faq Image End -->
@@ -23,22 +28,22 @@ import { Goal, HeartPulse } from "@lucide/astro/icons/index";
             <div class="satisfy-client-images">
               <div class="satisfy-client-image">
                 <figure class="image-anime">
-                  <img src="https://placehold.co/50x50" alt="" />
+                  <img src={avatar1.src} alt="" />
                 </figure>
               </div>
               <div class="satisfy-client-image">
                 <figure class="image-anime">
-                  <img src="https://placehold.co/50x50" alt="" />
+                  <img src={avatar2.src} alt="" />
                 </figure>
               </div>
               <div class="satisfy-client-image">
                 <figure class="image-anime">
-                  <img src="https://placehold.co/50x50" alt="" />
+                  <img src={avatar3.src} alt="" />
                 </figure>
               </div>
               <div class="satisfy-client-image">
                 <figure class="image-anime">
-                  <img src="https://placehold.co/50x50" alt="" />
+                  <img src={avatar4.src} alt="" />
                 </figure>
               </div>
             </div>
@@ -46,8 +51,8 @@ import { Goal, HeartPulse } from "@lucide/astro/icons/index";
 
             <!-- Faq CTA Box Content Start -->
             <div class="faq-cta-box-content-royal">
-              <h2><span class="counter">1000</span>+</h2>
-              <p>Lives Transformed</p>
+              <h2 class="text-light"><span class="counter">1000</span>+</h2>
+              <p class="text-light">Lives Transformed</p>
             </div>
             <!-- Faq CTA Box Content End -->
           </div>
@@ -63,21 +68,24 @@ import { Goal, HeartPulse } from "@lucide/astro/icons/index";
           <div class="section-title">
             <h3 class="wow fadeInUp">About Us</h3>
             <h2 data-cursor="-opaque" class="text-anime-style-3">Our Origin Story</h2>
-            <p data-wow-delay="0.2s" class="wow fadeInUp">
-              Coach Anton Soler founded BODYBYALS during the pandemic, but his journey started long before that. Growing
-              up, he was a fat kid and struggled with weight, even though he was active in sports. He realized that
-              being active alone wasn’t enough to get results, which sparked his interest in fitness and nutrition.<br
-              /><br />
-              Over the years, he tried different methods and learned from every experience. All of this taught him that lasting
-              results come from controlling hormones and building sustainable habits, rather than just counting calories.<br
-              /><br />
-              Every day, his vision guides you through BODYBYALS Online Coaching with easy-to-follow workouts, a sustainable
-              Nutrition Guide, and healthier carb alternatives like BODYBYALS Shirataki Rice and Keto Bread to support your
-              fitness journey.<br /><br />
-              Our approach is designed to be sustainable for every client, helping you stay on track while enjoying your favorite
-              meals. No matter where you are in your day or your journey, your progress is our mission. Together, we’ll help
-              you build healthier habits and turn your wellness goals into reality.
-            </p>
+            <div class="about-text-wrapper">
+              <p data-wow-delay="0.2s" class="wow fadeInUp about-text">
+                Coach Anton Soler founded BODYBYALS during the pandemic, but his journey started long before that.
+                Growing up, he was a fat kid and struggled with weight, even though he was active in sports. He realized
+                that being active alone wasn't enough to get results, which sparked his interest in fitness and
+                nutrition.<br /><br />
+                Over the years, he tried different methods and learned from every experience. All of this taught him that
+                lasting results come from controlling hormones and building sustainable habits, rather than just counting
+                calories.<br /><br />
+                Every day, his vision guides you through BODYBYALS Online Coaching with easy-to-follow workouts, a sustainable
+                Nutrition Guide, and healthier carb alternatives like BODYBYALS Shirataki Rice and Keto Bread to support your
+                fitness journey.<br /><br />
+                Our approach is designed to be sustainable for every client, helping you stay on track while enjoying your
+                favorite meals. No matter where you are in your day or your journey, your progress is our mission. Together,
+                we'll help you build healthier habits and turn your wellness goals into reality.
+              </p>
+            </div>
+            <button class="show-more-btn">Show More</button>
           </div>
           <!-- Section Title End -->
 
@@ -86,7 +94,7 @@ import { Goal, HeartPulse } from "@lucide/astro/icons/index";
             <!-- About Body Item Start -->
             <div class="about-us-body-item">
               <div class="icon-box">
-                <HeartPulse size="30" color="#0E0E0E" stroke-width="1.5" />
+                <HeartPulse size="30" color="#FFFFFF" stroke-width="1.5" />
               </div>
               <div class="about-us-body-item-content">
                 <h3>Results That Last a Lifetime</h3>
@@ -101,7 +109,7 @@ import { Goal, HeartPulse } from "@lucide/astro/icons/index";
             <!-- About Body Item Start -->
             <div class="about-us-body-item">
               <div class="icon-box">
-                <Goal size="30" color="#0E0E0E" stroke-width="1.5" />
+                <Goal size="30" color="#FFFFFF" stroke-width="1.5" />
               </div>
               <div class="about-us-body-item-content">
                 <h3>Your Progress, Our Mission</h3>
@@ -121,3 +129,15 @@ import { Goal, HeartPulse } from "@lucide/astro/icons/index";
   </div>
 </section>
 <!-- About Section End -->
+
+<script>
+  const showMoreBtn = document.querySelector(".show-more-btn");
+  const aboutTextWrapper = document.querySelector(".about-text-wrapper");
+
+  if (showMoreBtn && aboutTextWrapper) {
+    showMoreBtn.addEventListener("click", () => {
+      aboutTextWrapper.classList.toggle("expanded");
+      showMoreBtn.textContent = aboutTextWrapper.classList.contains("expanded") ? "Show Less" : "Show More";
+    });
+  }
+</script>
