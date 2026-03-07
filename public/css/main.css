@@ -399,7 +399,7 @@ a:focus {
 
 .dark-section {
   background-color: var(--primary-color);
-  background-image: url("../images/dark-section-bg-shape.png");
+  background-image: url("../images/emerald-section-bg-shape.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -9342,7 +9342,7 @@ header.main-header .header-sticky.active {
 }
 
 .testimonial-rating-box-royal {
-  background: var(--primary-color) url("../images/testimonial-rating-box-bg-shape-royal.png") no-repeat;
+  background: var(--primary-color) url("../images/emerald-testimonial-rating.png") no-repeat;
   background-position: center center;
   background-size: cover;
   min-height: 480px;
