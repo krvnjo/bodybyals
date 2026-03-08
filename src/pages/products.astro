@@ -1,0 +1,147 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { Wheat, ShoppingBag, Flame, Utensils } from "@lucide/astro/icons/index";
+import ketoBreadImage from "@/assets/images/products/keto-bread.png";
+import shiratakiRice from "@/assets/images/products/shirataki-rice.png";
+import mealPlan from "@/assets/images/products/meal-plan.png";
+
+const products = [
+  {
+    image: shiratakiRice,
+    title: "Dry Shirataki Rice",
+    description:
+      "Our Premium Dry Shirataki Rice is the perfect low-carb alternative to regular rice. Made from konjac, it's virtually calorie-free, high in fiber, and has no strong odor. Quick and easy to prepare, it pairs perfectly with any meal while helping you stay on track with your fitness and nutrition goals.",
+    details: [
+      { icon: Wheat, label: "Carbs", value: "0g per serving" },
+      { icon: Flame, label: "Calories", value: "Virtually calorie-free" },
+      { icon: Utensils, label: "Prep Time", value: "Quick and easy" },
+      { icon: ShoppingBag, label: "Best For", value: "Rice replacement" },
+    ],
+  },
+  {
+    image: ketoBreadImage,
+    title: "Keto Bread",
+    description:
+      "Our Keto Bread, also known as Keto French Toast, is a low-carb, high-protein bread made with almond flour. It's a healthy alternative to regular bread—soft, satisfying, and perfect for sandwiches, toast, or enjoying with your favorite spreads. With BodyByAls Keto Bread, you can enjoy the foods you love while keeping your nutrition on track.",
+    details: [
+      { icon: Wheat, label: "Protein", value: "15g per serving" },
+      { icon: Flame, label: "Carbs", value: "Low-carb" },
+      { icon: Utensils, label: "Made With", value: "Almond flour" },
+      { icon: ShoppingBag, label: "Best For", value: "Sandwiches & toast" },
+    ],
+  },
+  {
+    image: mealPlan,
+    title: "Meal Plan",
+    description:
+      "Our Meal Plan is low-carb and high-protein, also known as the Insulin Sensitivity Reset Diet, designed to improve insulin sensitivity, reduce inflammation, and support overall metabolic health. We focus on balancing hormones, not counting calories, so you can enjoy every meal while staying on track. Premium packages feature USDA Prime Ribeye Steak and Salmon, while superior packages include a variety of beef, chicken, salads, and more.",
+    details: [
+      { icon: Wheat, label: "Diet Type", value: "Low-carb, high-protein" },
+      { icon: Flame, label: "Focus", value: "Hormone balance" },
+      { icon: Utensils, label: "Premium", value: "USDA Prime Ribeye & Salmon" },
+      { icon: ShoppingBag, label: "Result", value: "Juicy, tasty, filling" },
+    ],
+  },
+];
+---
+
+<Layout
+  title="Our Products | BodyByAls"
+  description="Discover BodyByAls keto-friendly products. Dry Shirataki Rice, Keto Bread, and delicious Meal Plans designed to help you stay on track while enjoying your favorite foods.">
+  <!-- Page Header Section Start -->
+  <div class="page-header bg-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <!-- Page Header Box Start -->
+          <div class="page-header-box">
+            <h1 class="text-anime-style-3" data-cursor="-opaque">Our Products</h1>
+            <nav class="wow fadeInUp">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Products</li>
+              </ol>
+            </nav>
+          </div>
+          <!-- Page Header Box End -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Page Header Section End -->
+
+  <!-- Page Products Start -->
+  {
+    products.map((product, index) => (
+      <div class="page-team-single py-3">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <!-- Page Product Box Start -->
+              <div class="page-team-single-box p-4">
+                <!-- Product About Start -->
+                <div class="team-member-about">
+                  <!-- Product Image Start -->
+                  <div class="team-single-image">
+                    <figure class="image-anime">
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        width={350}
+                        height={265}
+                        loading="lazy"
+                        format="webp"
+                      />
+                    </figure>
+                  </div>
+                  <!-- Product Image End -->
+
+                  <!-- Product Content Start -->
+                  <div class="team-about-content">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                      <h2 class="text-anime-style-3" data-cursor="-opaque">
+                        {product.title}
+                      </h2>
+                      <p class="wow fadeInUp">{product.description}</p>
+                    </div>
+                    <!-- Section Title End -->
+
+                    <!-- Product Details List Start -->
+                    <div class="team-contact-list wow fadeInUp" data-wow-delay="0.2s">
+                      {product.details.map((detail) => (
+                        <div class="team-contact-item">
+                          <div class="icon-box">
+                            <detail.icon color="#FFFFFF" size={24} stroke-width="1.5" />
+                          </div>
+                          <div class="team-contact-content">
+                            <h3>{detail.label}</h3>
+                            <p>{detail.value}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    <!-- Product Details List End -->
+
+                    <!-- Shop Button Start -->
+                    <div class="wow fadeInUp mt-4" data-wow-delay="0.4s">
+                      <a href="https://bodybyals.passio.eco/" target="_blank" class="btn-default">
+                        Shop Now
+                      </a>
+                    </div>
+                    <!-- Shop Button End -->
+                  </div>
+                  <!-- Product Content End -->
+                </div>
+                <!-- Product About End -->
+              </div>
+              <!-- Page Product Box End -->
+            </div>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+  <!-- Page Products End -->
+</Layout>

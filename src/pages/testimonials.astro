@@ -1,0 +1,130 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import testimonialQuote from "@/assets/images/icons/icon-testimonial-emerald.svg";
+import footerLogo from "@/assets/images/logos/logo.svg";
+
+const testimonials = [
+  {
+    name: "Nate Javier",
+    job: "Influencer",
+    title: "From XXL to M — a complete lifestyle change!",
+    quote:
+      "From size XXL to M! Thank you Coach Anton for the fitness and nutrition guidance. I've never felt more comfortable in my body than now — all of this while fixing my relationship with food. I didn't get a diet — I got a lifestyle change and I'm never letting it go.",
+    delay: null,
+  },
+  {
+    name: "Sofie",
+    job: "Influencer",
+    title: "1 year transformation done in 6 months!",
+    quote:
+      "1 year transformation but did it in 6 months! now i don't document na but still try to keep with the diet + workouts, its good for maintenance and prep my body for future children!",
+    delay: "0.2s",
+  },
+  {
+    name: "Toni Sia",
+    job: "Influencer",
+    title: "3 years of consistency changed my life!",
+    quote:
+      "3 years of consistency, baby! Malayo pa, pero malayo na, Proud of you, self Usually I'd be hesitant to post my workout and fitness always videos but big thanks to my coach @BODYBYALS for pushing me. This journey hasn't been easy but it change my life in so many ways.",
+    delay: "0.4s",
+  },
+  {
+    name: "King Sia",
+    job: "Influencer",
+    title: "Lost fat while building muscles!",
+    quote:
+      "The meal plan has been a great help to us. I noticed how my body was able to drop weight in just 2 weeks. Also, I love how the meal plan consists of healthy fats & enough protein for body building (which is my goal🙈). Best thing I noticed was I was able to lose fat while building muscles. I also wanna commend how the bodybyals meal plan is very filling and I find myself snacking way less.",
+    delay: "0.6s",
+  },
+  {
+    name: "Paula D. Paz",
+    job: "",
+    title: "Never thought I'd fit into an XS!",
+    quote:
+      "With proper guidance, dedication, and consistency (all thanks to my trainer!), I've made progress I never imagined! Never did I think I'd fit into an XS. Today, movement is an integral part of my life, something I can't live without. I'm fit, but more importantly, I'm strong and disciplined.",
+    delay: "0.8s",
+  },
+];
+---
+
+<Layout
+  title="Client Testimonials | BodyByAls"
+  description="Read real success stories from BodyByAls clients worldwide. Discover how Coach Anton's fitness coaching and nutrition guidance has transformed lives.">
+  <!-- Page Header Section Start -->
+  <div class="page-header bg-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <!-- Page Header Box Start -->
+          <div class="page-header-box">
+            <h1 class="text-anime-style-3" data-cursor="-opaque">Client Testimonials</h1>
+            <nav class="wow fadeInUp">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Testimonials</li>
+              </ol>
+            </nav>
+          </div>
+          <!-- Page Header Box End -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Page Header Section End -->
+
+  <!-- Page Testimonials Start -->
+  <div class="page-testimonials">
+    <div class="container">
+      <div class="row">
+        {
+          testimonials.map((testimonial) => (
+            <div class="col-md-6">
+              <!-- Testimonial Item Start -->
+              <div class="testimonial-item wow fadeInUp" data-wow-delay={testimonial.delay}>
+                <!-- Testimonial Item Header Start -->
+                <div class="testimonial-item-header">
+                  <div class="testimonial-item-rating">
+                    <i class="fa fa-solid fa-star" />
+                    <i class="fa fa-solid fa-star" />
+                    <i class="fa fa-solid fa-star" />
+                    <i class="fa fa-solid fa-star" />
+                    <i class="fa fa-solid fa-star" />
+                  </div>
+                  <div class="testimonial-item-content">
+                    <h3>"{testimonial.title}"</h3>
+                    <p>"{testimonial.quote}"</p>
+                  </div>
+                </div>
+                <!-- Testimonial Item Header End -->
+
+                <!-- Testimonial Item Body Start -->
+                <div class="testimonial-item-body">
+                  <!-- Testimonial Item Author Start -->
+                  <div class="testimonial-item-author">
+                    <div class="testimonial-author-content">
+                      <h3>{testimonial.name}</h3>
+                      <p>{testimonial.job}</p>
+                    </div>
+                  </div>
+                  <!-- Testimonial Item Author End -->
+
+                  <!-- Testimonial Quotes Image Start -->
+                  <div class="testimonials-item-quotes">
+                    <figure>
+                      <img src="/images/testimonial-quote-emerald.svg" alt="" />
+                    </figure>
+                  </div>
+                  <!-- Testimonial Quotes Image End -->
+                </div>
+                <!-- Testimonial Item Body End -->
+              </div>
+              <!-- Testimonial Item End -->
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+  <!-- Page Testimonials End -->
+</Layout>

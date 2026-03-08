@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import mainLogo from "@/assets/images/logos/logo.svg";
+const { currentPath } = Astro.props;
+const isHomePage = currentPath === "/";
 ---
 
 <!-- Header Start -->
@@ -18,13 +20,16 @@ import mainLogo from "@/assets/images/logos/logo.svg";
         <div class="collapse navbar-collapse main-menu">
           <div class="nav-menu-wrapper">
             <ul id="menu" class="navbar-nav mr-auto">
-              <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-              <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-              <li class="nav-item"><a href="#products" class="nav-link">Products</a></li>
-              <li class="nav-item"><a href="#transformations" class="nav-link">Transformations</a></li>
+              <li class="nav-item"><a href={isHomePage ? "#about" : "/#about"} class="nav-link">About</a></li>
+              <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
+              <li class="nav-item"><a href="/products" class="nav-link">Products</a></li>
+              <li class="nav-item">
+                <a href={isHomePage ? "#transformations" : "/#transformations"} class="nav-link">Transformations</a>
+              </li>
               <li class="nav-item submenu">
                 <a href="#" class="nav-link">More</a>
                 <ul>
+                  <li class="nav-item"><a href="/testimonials" class="nav-link text-light">Testimonials</a></li>
                   <li class="nav-item"><a href="/contact" class="nav-link text-light">Contact Us</a></li>
                   <li class="nav-item"><a href="/faqs" class="nav-link text-light">FAQs</a></li>
                 </ul>
@@ -34,7 +39,7 @@ import mainLogo from "@/assets/images/logos/logo.svg";
 
           <!-- Get Started Btn Start -->
           <div class="header-btn">
-            <a href="#get-started" class="btn-default btn-highlighted">Get Started</a>
+            <a href={isHomePage ? "#get-started" : "/#get-started"} class="btn-default btn-highlighted">Get Started</a>
           </div>
           <!-- Get Started Btn End -->
         </div>

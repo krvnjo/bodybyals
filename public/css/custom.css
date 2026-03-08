@@ -364,3 +364,51 @@
     font-size: 11px;
   }
 }
+
+.testimonial-item-author .testimonial-author-content h3,
+.testimonial-item-author .testimonial-author-content p {
+  white-space: nowrap;
+}
+
+.page-team-single.py-3 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.page-team-single-box.p-4 {
+  padding: 1.5rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.team-single-image {
+  min-width: 450px;
+  max-width: 450px;
+}
+
+.team-about-content {
+  flex: 1;
+}
+
+.team-about-content .section-title p {
+  margin-bottom: 15px;
+}
+
+.team-contact-list {
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.team-contact-item {
+  padding: 10px;
+}
+
+.team-member-about {
+  gap: 30px;
+}
+
+@media (max-width: 991px) {
+  .team-single-image {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}

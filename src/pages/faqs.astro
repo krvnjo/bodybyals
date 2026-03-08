@@ -1,10 +1,146 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const categories = [
+  { id: "faq_1", title: "General Questions" },
+  { id: "faq_2", title: "Program & Coaching" },
+  { id: "faq_3", title: "Nutrition & Meal Plans" },
+  { id: "faq_4", title: "Payment & Getting Started" },
+  { id: "faq_5", title: "Results & Support" },
+];
+
+const faqSections = [
+  {
+    id: "faq_1",
+    accordionId: "accordion",
+    title: "General Questions",
+    faqs: [
+      {
+        question: "Is BODYBYALS suitable for beginners?",
+        answer:
+          "<p>Yes. BODYBYALS is beginner-friendly. Our workouts are easy to follow, with proper form guidance and progressions based on your level, lifestyle, and goals.</p>",
+      },
+      {
+        question: "Can I do BODYBYALS even if I'm busy or working full-time?",
+        answer:
+          "<p>Absolutely. Our program is designed for busy individuals. You can train at home or anywhere, at your own time and pace. We have clients all over the world including the Philippines, USA, Dubai, Singapore, Australia, and many more — so the program works across different schedules and time zones.</p>",
+      },
+      {
+        question: "Is this program suitable for PCOS, insulin resistance, or postpartum clients?",
+        answer:
+          "<p>Yes. BODYBYALS focuses on controlling hormones and improving insulin sensitivity through proper training and nutrition.</p>",
+      },
+    ],
+  },
+  {
+    id: "faq_2",
+    accordionId: "accordion1",
+    title: "Program & Coaching",
+    faqs: [
+      {
+        question: "Do I need gym equipment?",
+        answer:
+          "<p>For beginners, we don't recommend lifting weights right away to prevent injuries. We start with bodyweight exercises to build proper form and foundation. For clients who already know how to work out, we can include weights based on your capacity and experience.</p>",
+      },
+      {
+        question: "What's included in the BODYBYALS Online Coaching and Nutrition Guide?",
+        answer: `<p>You'll get:</p>
+          <ul>
+            <li>A free consultation call before you join to answer all your questions</li>
+            <li>Easy-to-follow workout programs tailored to your lifestyle</li>
+            <li>Coach Anton's Nutrition Guide, discussed in a separate call</li>
+            <li>Chat support where you can send meal photos and progress updates</li>
+          </ul>`,
+      },
+      {
+        question: "What makes BODYBYALS different from other programs?",
+        answer: `<p>We focus on:</p>
+          <ul>
+            <li>Controlling hormones, not calorie counting</li>
+            <li>A sustainable nutrition guide, not extreme dieting</li>
+            <li>Real food and healthy carb alternatives</li>
+            <li>Long-term results by building healthy habits</li>
+          </ul>`,
+      },
+      {
+        question: "Are BODYBYALS products required to join the program?",
+        answer:
+          "<p>No, they are optional. However, BODYBYALS Shirataki Rice and Keto Bread are great healthy carb alternatives to help you stay consistent while enjoying your meals.</p>",
+      },
+    ],
+  },
+  {
+    id: "faq_3",
+    accordionId: "accordion2",
+    title: "Nutrition & Meal Plans",
+    faqs: [
+      {
+        question: "What is the BODYBYALS Nutrition Guide? Is it keto?",
+        answer: `<p>The BODYBYALS Nutrition Guide is an Insulin Sensitivity Reset Diet. We don't count calories. Instead, we focus on controlling hormones. This guide is suitable whether you have PCOS, want to lose weight, have hormonal imbalance, are trying to get pregnant, are postpartum, or simply want to be healthier overall.</p>
+          <p>The guide teaches you what to eat, when to eat, what to avoid, and how to enjoy your favorite foods without guilt.</p>`,
+      },
+      {
+        question: "What's included in the BODYBYALS Meal Plan?",
+        answer:
+          "<p>The meal plan is low-carb and high-protein, also called the Insulin Sensitivity Reset Diet. It's seed oil–free, chef-prepared and filling, and designed to support insulin sensitivity and hormone balance. Premium packages include USDA Prime Ribeye Steak and Salmon.</p>",
+      },
+      {
+        question: "How many meals per day are included in the meal plan?",
+        answer: `<p>We offer different options based on eating capacity:</p>
+          <ul>
+            <li><strong>Premium and Superior Packages:</strong> 2 meals per day, intentionally designed to support hormone balance and better insulin response. These are suitable for heavy eaters.</li>
+            <li><strong>Lite Package:</strong> 2 bowls per day — 1 bowl for lunch and 1 bowl for dinner — suitable for light eaters.</li>
+          </ul>`,
+      },
+      {
+        question: "Can I customize my meal plan?",
+        answer:
+          "<p>Menu options vary by package. Our team will guide you in choosing the best option based on your goals and lifestyle.</p>",
+      },
+    ],
+  },
+  {
+    id: "faq_4",
+    accordionId: "accordion3",
+    title: "Payment & Getting Started",
+    faqs: [
+      {
+        question: "Is installment payment available?",
+        answer: `<p><strong>For the BODYBYALS Meal Plan:</strong> Yes! Installment options are available and can be discussed during a call so we can explain the terms clearly and guide you properly.</p>
+          <p><strong>For BODYBYALS Online Coaching & Nutrition Guide:</strong> Packages are paid in full. After proof of transaction, we will schedule another call to walk you through the Nutrition Guide.</p>`,
+      },
+      {
+        question: "How do I start?",
+        answer:
+          "<p>You can book a free consultation call so we can explain the program and help you choose what's best for you.</p>",
+      },
+    ],
+  },
+  {
+    id: "faq_5",
+    accordionId: "accordion4",
+    title: "Results & Support",
+    faqs: [
+      {
+        question: "How does chat support work?",
+        answer:
+          "<p>Clients can send meal photos, questions, and progress updates through chat. Our team provides guidance and feedback to help you stay consistent and on track.</p>",
+      },
+      {
+        question: "When will I start seeing results?",
+        answer:
+          "<p>Results depend on consistency. For BODYBYALS Online Coaching & Nutrition Guide, long-lasting results come from following the workouts and nutrition guide properly. The same applies to the Meal Plan — consistent adherence leads to better and sustainable results.</p>",
+      },
+    ],
+  },
+];
+
+let globalIndex = 0;
 ---
 
 <Layout
   title="FAQs | BodyByAls"
-  description="Transform your fitness journey with BodyByAls Online Coaching. Get easy-to-follow workouts, sustainable nutrition guidance, and hormone-based strategies from Coach Anton Soler. Train anywhere, eat smarter, and build lasting healthy habits.">
+  description="Find answers to common questions about BodyByAls Online Coaching, nutrition guides, meal plans, and more. Learn how Coach Anton can help you transform your fitness journey.">
   <!-- Page Header Section Start -->
   <div class="page-header bg-section">
     <div class="container">
@@ -16,7 +152,7 @@ import Layout from "../layouts/Layout.astro";
             <nav class="wow fadeInUp">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">FAQS</li>
+                <li class="breadcrumb-item active" aria-current="page">FAQs</li>
               </ol>
             </nav>
           </div>
@@ -37,11 +173,13 @@ import Layout from "../layouts/Layout.astro";
             <!-- Page Category List Start -->
             <div class="page-category-list wow fadeInUp">
               <ul>
-                <li><a href="#faq_1">General Questions</a></li>
-                <li><a href="#faq_2">Program & Coaching</a></li>
-                <li><a href="#faq_3">Nutrition & Meal Plans</a></li>
-                <li><a href="#faq_4">Payment & Getting Started</a></li>
-                <li><a href="#faq_5">Results & Support</a></li>
+                {
+                  categories.map((category) => (
+                    <li>
+                      <a href={`#${category.id}`}>{category.title}</a>
+                    </li>
+                  ))
+                }
               </ul>
             </div>
             <!-- Page Category List End -->
@@ -52,503 +190,48 @@ import Layout from "../layouts/Layout.astro";
         <div class="col-lg-8">
           <!-- Page FAQs Category Start -->
           <div class="page-faqs-catagery">
-            <!-- FAQs Section 1: General Questions -->
-            <div class="page-single-faqs" id="faq_1">
-              <div class="section-title">
-                <h2 class="text-anime-style-3" data-cursor="-opaque">General Questions</h2>
-              </div>
+            {
+              faqSections.map((section) => (
+                <div class="page-single-faqs" id={section.id}>
+                  <div class="section-title">
+                    <h2 class="text-anime-style-3" data-cursor="-opaque">
+                      {section.title}
+                    </h2>
+                  </div>
 
-              <div class="faq-accordion our-faq-accordion" id="accordion">
-                <!-- FAQ Item Start -->
-                <div class="accordion-item wow fadeInUp">
-                  <h2 class="accordion-header" id="heading1">
-                    <button
-                      class="accordion-button"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse1"
-                      aria-expanded="true"
-                      aria-controls="collapse1">
-                      Q1. Is BODYBYALS suitable for beginners?
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse1"
-                    class="accordion-collapse collapse show"
-                    aria-labelledby="heading1"
-                    data-bs-parent="#accordion">
-                    <div class="accordion-body">
-                      <p>
-                        Yes. BODYBYALS is beginner-friendly. Our workouts are easy to follow, with proper form guidance
-                        and progressions based on your level, lifestyle, and goals.
-                      </p>
-                    </div>
+                  <div class="faq-accordion our-faq-accordion" id={section.accordionId}>
+                    {section.faqs.map((faq, faqIndex) => {
+                      globalIndex++;
+                      const isFirst = faqIndex === 0;
+                      const delay = faqIndex > 0 ? `${faqIndex * 0.2}s` : null;
+
+                      return (
+                        <div class="accordion-item wow fadeInUp" data-wow-delay={delay}>
+                          <h2 class="accordion-header" id={`heading${globalIndex}`}>
+                            <button
+                              class={`accordion-button ${!isFirst ? "collapsed" : ""}`}
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target={`#collapse${globalIndex}`}
+                              aria-expanded={isFirst ? "true" : "false"}
+                              aria-controls={`collapse${globalIndex}`}>
+                              Q{faqIndex + 1}. {faq.question}
+                            </button>
+                          </h2>
+                          <div
+                            id={`collapse${globalIndex}`}
+                            class={`accordion-collapse collapse ${isFirst ? "show" : ""}`}
+                            aria-labelledby={`heading${globalIndex}`}
+                            data-bs-parent={`#${section.accordionId}`}>
+                            <div class="accordion-body" set:html={faq.answer} />
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
-                <!-- FAQ Item End -->
-
-                <!-- FAQ Item Start -->
-                <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
-                  <h2 class="accordion-header" id="heading2">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse2"
-                      aria-expanded="false"
-                      aria-controls="collapse2">
-                      Q2. Can I do BODYBYALS even if I'm busy or working full-time?
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse2"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading2"
-                    data-bs-parent="#accordion">
-                    <div class="accordion-body">
-                      <p>
-                        Absolutely. Our program is designed for busy individuals. You can train at home or anywhere, at
-                        your own time and pace. We have clients all over the world including the Philippines, USA,
-                        Dubai, Singapore, Australia, and many more — so the program works across different schedules and
-                        time zones.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- FAQ Item End -->
-
-                <!-- FAQ Item Start -->
-                <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
-                  <h2 class="accordion-header" id="heading3">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse3"
-                      aria-expanded="false"
-                      aria-controls="collapse3">
-                      Q3. Is this program suitable for PCOS, insulin resistance, or postpartum clients?
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse3"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading3"
-                    data-bs-parent="#accordion">
-                    <div class="accordion-body">
-                      <p>
-                        Yes. BODYBYALS focuses on controlling hormones and improving insulin sensitivity through proper
-                        training and nutrition.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- FAQ Item End -->
-              </div>
-            </div>
-            <!-- FAQs Section 1 End -->
-
-            <!-- FAQs Section 2: Program & Coaching -->
-            <div class="page-single-faqs" id="faq_2">
-              <div class="section-title">
-                <h2 class="text-anime-style-3" data-cursor="-opaque">Program & Coaching</h2>
-              </div>
-
-              <div class="faq-accordion our-faq-accordion" id="accordion1">
-                <!-- FAQ Item Start -->
-                <div class="accordion-item wow fadeInUp">
-                  <h2 class="accordion-header" id="heading4">
-                    <button
-                      class="accordion-button"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse4"
-                      aria-expanded="true"
-                      aria-controls="collapse4">
-                      Q1. Do I need gym equipment?
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse4"
-                    class="accordion-collapse collapse show"
-                    aria-labelledby="heading4"
-                    data-bs-parent="#accordion1">
-                    <div class="accordion-body">
-                      <p>
-                        For beginners, we don't recommend lifting weights right away to prevent injuries. We start with
-                        bodyweight exercises to build proper form and foundation. For clients who already know how to
-                        work out, we can include weights based on your capacity and experience.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- FAQ Item End -->
-
-                <!-- FAQ Item Start -->
-                <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
-                  <h2 class="accordion-header" id="heading5">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse5"
-                      aria-expanded="false"
-                      aria-controls="collapse5">
-                      Q2. What's included in the BODYBYALS Online Coaching and Nutrition Guide?
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse5"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading5"
-                    data-bs-parent="#accordion1">
-                    <div class="accordion-body">
-                      <p>You'll get:</p>
-                      <ul>
-                        <li>A free consultation call before you join to answer all your questions</li>
-                        <li>Easy-to-follow workout programs tailored to your lifestyle</li>
-                        <li>Coach Anton's Nutrition Guide, discussed in a separate call</li>
-                        <li>Chat support where you can send meal photos and progress updates</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <!-- FAQ Item End -->
-
-                <!-- FAQ Item Start -->
-                <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
-                  <h2 class="accordion-header" id="heading6">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse6"
-                      aria-expanded="false"
-                      aria-controls="collapse6">
-                      Q3. What makes BODYBYALS different from other programs?
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse6"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading6"
-                    data-bs-parent="#accordion1">
-                    <div class="accordion-body">
-                      <p>We focus on:</p>
-                      <ul>
-                        <li>Controlling hormones, not calorie counting</li>
-                        <li>A sustainable nutrition guide, not extreme dieting</li>
-                        <li>Real food and healthy carb alternatives</li>
-                        <li>Long-term results by building healthy habits</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <!-- FAQ Item End -->
-
-                <!-- FAQ Item Start -->
-                <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
-                  <h2 class="accordion-header" id="heading7">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse7"
-                      aria-expanded="false"
-                      aria-controls="collapse7">
-                      Q4. Are BODYBYALS products required to join the program?
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse7"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading7"
-                    data-bs-parent="#accordion1">
-                    <div class="accordion-body">
-                      <p>
-                        No, they are optional. However, BODYBYALS Shirataki Rice and Keto Bread are great healthy carb
-                        alternatives to help you stay consistent while enjoying your meals.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- FAQ Item End -->
-              </div>
-            </div>
-            <!-- FAQs Section 2 End -->
-
-            <!-- FAQs Section 3: Nutrition & Meal Plans -->
-            <div class="page-single-faqs" id="faq_3">
-              <div class="section-title">
-                <h2 class="text-anime-style-3" data-cursor="-opaque">Nutrition & Meal Plans</h2>
-              </div>
-
-              <div class="faq-accordion our-faq-accordion" id="accordion2">
-                <!-- FAQ Item Start -->
-                <div class="accordion-item wow fadeInUp">
-                  <h2 class="accordion-header" id="heading8">
-                    <button
-                      class="accordion-button"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse8"
-                      aria-expanded="true"
-                      aria-controls="collapse8">
-                      Q1. What is the BODYBYALS Nutrition Guide? Is it keto?
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse8"
-                    class="accordion-collapse collapse show"
-                    aria-labelledby="heading8"
-                    data-bs-parent="#accordion2">
-                    <div class="accordion-body">
-                      <p>
-                        The BODYBYALS Nutrition Guide is an Insulin Sensitivity Reset Diet. We don't count calories.
-                        Instead, we focus on controlling hormones. This guide is suitable whether you have PCOS, want to
-                        lose weight, have hormonal imbalance, are trying to get pregnant, are postpartum, or simply want
-                        to be healthier overall.
-                      </p>
-                      <p>
-                        The guide teaches you what to eat, when to eat, what to avoid, and how to enjoy your favorite
-                        foods without guilt.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- FAQ Item End -->
-
-                <!-- FAQ Item Start -->
-                <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
-                  <h2 class="accordion-header" id="heading9">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse9"
-                      aria-expanded="false"
-                      aria-controls="collapse9">
-                      Q2. What's included in the BODYBYALS Meal Plan?
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse9"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading9"
-                    data-bs-parent="#accordion2">
-                    <div class="accordion-body">
-                      <p>
-                        The meal plan is low-carb and high-protein, also called the Insulin Sensitivity Reset Diet. It's
-                        seed oil–free, chef-prepared and filling, and designed to support insulin sensitivity and
-                        hormone balance. Premium packages include USDA Prime Ribeye Steak and Salmon.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- FAQ Item End -->
-
-                <!-- FAQ Item Start -->
-                <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
-                  <h2 class="accordion-header" id="heading10">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse10"
-                      aria-expanded="false"
-                      aria-controls="collapse10">
-                      Q3. How many meals per day are included in the meal plan?
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse10"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading10"
-                    data-bs-parent="#accordion2">
-                    <div class="accordion-body">
-                      <p>We offer different options based on eating capacity:</p>
-                      <ul>
-                        <li>
-                          <strong>Premium and Superior Packages:</strong> 2 meals per day, intentionally designed to support
-                          hormone balance and better insulin response. These are suitable for heavy eaters.
-                        </li>
-                        <li>
-                          <strong>Lite Package:</strong> 2 bowls per day — 1 bowl for lunch and 1 bowl for dinner — suitable
-                          for light eaters.
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <!-- FAQ Item End -->
-
-                <!-- FAQ Item Start -->
-                <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
-                  <h2 class="accordion-header" id="heading11">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse11"
-                      aria-expanded="false"
-                      aria-controls="collapse11">
-                      Q4. Can I customize my meal plan?
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse11"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading11"
-                    data-bs-parent="#accordion2">
-                    <div class="accordion-body">
-                      <p>
-                        Menu options vary by package. Our team will guide you in choosing the best option based on your
-                        goals and lifestyle.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- FAQ Item End -->
-              </div>
-            </div>
-            <!-- FAQs Section 3 End -->
-
-            <!-- FAQs Section 4: Payment & Getting Started -->
-            <div class="page-single-faqs" id="faq_4">
-              <div class="section-title">
-                <h2 class="text-anime-style-3" data-cursor="-opaque">Payment & Getting Started</h2>
-              </div>
-
-              <div class="faq-accordion our-faq-accordion" id="accordion3">
-                <!-- FAQ Item Start -->
-                <div class="accordion-item wow fadeInUp">
-                  <h2 class="accordion-header" id="heading12">
-                    <button
-                      class="accordion-button"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse12"
-                      aria-expanded="true"
-                      aria-controls="collapse12">
-                      Q1. Is installment payment available?
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse12"
-                    class="accordion-collapse collapse show"
-                    aria-labelledby="heading12"
-                    data-bs-parent="#accordion3">
-                    <div class="accordion-body">
-                      <p>
-                        <strong>For the BODYBYALS Meal Plan:</strong> Yes! Installment options are available and can be discussed
-                        during a call so we can explain the terms clearly and guide you properly.
-                      </p>
-                      <p>
-                        <strong>For BODYBYALS Online Coaching & Nutrition Guide:</strong> Packages are paid in full. After
-                        proof of transaction, we will schedule another call to walk you through the Nutrition Guide.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- FAQ Item End -->
-
-                <!-- FAQ Item Start -->
-                <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
-                  <h2 class="accordion-header" id="heading13">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse13"
-                      aria-expanded="false"
-                      aria-controls="collapse13">
-                      Q2. How do I start?
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse13"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading13"
-                    data-bs-parent="#accordion3">
-                    <div class="accordion-body">
-                      <p>
-                        You can book a free consultation call so we can explain the program and help you choose what's
-                        best for you.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- FAQ Item End -->
-              </div>
-            </div>
-            <!-- FAQs Section 4 End -->
-
-            <!-- FAQs Section 5: Results & Support -->
-            <div class="page-single-faqs" id="faq_5">
-              <div class="section-title">
-                <h2 class="text-anime-style-3" data-cursor="-opaque">Results & Support</h2>
-              </div>
-
-              <div class="faq-accordion our-faq-accordion" id="accordion4">
-                <!-- FAQ Item Start -->
-                <div class="accordion-item wow fadeInUp">
-                  <h2 class="accordion-header" id="heading14">
-                    <button
-                      class="accordion-button"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse14"
-                      aria-expanded="true"
-                      aria-controls="collapse14">
-                      Q1. How does chat support work?
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse14"
-                    class="accordion-collapse collapse show"
-                    aria-labelledby="heading14"
-                    data-bs-parent="#accordion4">
-                    <div class="accordion-body">
-                      <p>
-                        Clients can send meal photos, questions, and progress updates through chat. Our team provides
-                        guidance and feedback to help you stay consistent and on track.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- FAQ Item End -->
-
-                <!-- FAQ Item Start -->
-                <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
-                  <h2 class="accordion-header" id="heading15">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapse15"
-                      aria-expanded="false"
-                      aria-controls="collapse15">
-                      Q2. When will I start seeing results?
-                    </button>
-                  </h2>
-                  <div
-                    id="collapse15"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="heading15"
-                    data-bs-parent="#accordion4">
-                    <div class="accordion-body">
-                      <p>
-                        Results depend on consistency. For BODYBYALS Online Coaching & Nutrition Guide, long-lasting
-                        results come from following the workouts and nutrition guide properly. The same applies to the
-                        Meal Plan — consistent adherence leads to better and sustainable results.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- FAQ Item End -->
-              </div>
-            </div>
-            <!-- FAQs Section 5 End -->
+              ))
+            }
           </div>
           <!-- Page FAQs Category End -->
         </div>

@@ -6,6 +6,8 @@ import phoneIcon from "@/assets/images/icons/icon-phone-light.svg";
 import mailIcon from "@/assets/images/icons/icon-mail-light.svg";
 
 const year = new Date().getFullYear();
+const { currentPath } = Astro.props;
+const isHomePage = currentPath === "/";
 ---
 
 <!-- Footer Start -->
@@ -40,11 +42,11 @@ const year = new Date().getFullYear();
           <div class="footer-links-royal">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#products">Products</a></li>
-              <li><a href="#transformations">Transformations</a></li>
-              <li><a href="#get-started">Get Started</a></li>
+              <li><a href={isHomePage ? "#about" : "/#about"}>About</a></li>
+              <li><a href="/services">Services</a></li>
+              <li><a href="/products">Products</a></li>
+              <li><a href={isHomePage ? "#transformations" : "/#transformations"}>Transformations</a></li>
+              <li><a href={isHomePage ? "#get-started" : "/#get-started"}>Get Started</a></li>
             </ul>
           </div>
           <!-- Footer Links End -->
@@ -53,11 +55,8 @@ const year = new Date().getFullYear();
           <div class="footer-links-royal">
             <h3>Support</h3>
             <ul>
-              <li><a href="#">Help Center</a></li>
               <li><a href="/contact">Contact Us</a></li>
               <li><a href="/faqs">FAQs</a></li>
-              <li><a href="#">Terms & Conditions</a></li>
-              <li><a href="#">Privacy Policy</a></li>
             </ul>
           </div>
           <!-- Footer Links End -->
@@ -68,15 +67,15 @@ const year = new Date().getFullYear();
             <ul>
               <li>
                 <Image src={locationIcon} alt="" />
-                123 Ayala Avenue, Makati City, Metro Manila, Philippines
+                Cubao, Quezon City, Philippines
               </li>
               <li>
                 <Image src={phoneIcon} alt="" />
-                <a href="tel:+639181234567">+(63) 917 123 4567</a>
+                <a href="tel:+639452333911">+(63) 945 233 3911</a>
               </li>
               <li>
                 <Image src={mailIcon} alt="" />
-                <a class="text-lowercase" href="mailto:bodybyals@domain.com">bodybyals@domain.com</a>
+                <a class="text-lowercase" href="mailto:bodybyals@gmail.com">bodybyals@gmail.com</a>
               </li>
             </ul>
           </div>
