@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 import footerLogo from "@/assets/images/logos/logo.svg";
 import locationIcon from "@/assets/images/icons/icon-location-light.svg";
-import phoneIcon from "@/assets/images/icons/icon-phone-light.svg";
 import mailIcon from "@/assets/images/icons/icon-mail-light.svg";
 
 const year = new Date().getFullYear();
@@ -45,8 +44,7 @@ const isHomePage = currentPath === "/";
               <li><a href={isHomePage ? "#about" : "/#about"}>About</a></li>
               <li><a href="/services">Services</a></li>
               <li><a href="/products">Products</a></li>
-              <li><a href={isHomePage ? "#transformations" : "/#transformations"}>Transformations</a></li>
-              <li><a href={isHomePage ? "#get-started" : "/#get-started"}>Get Started</a></li>
+              <li><a href="/transformations">Transformations</a></li>
             </ul>
           </div>
           <!-- Footer Links End -->
@@ -55,6 +53,7 @@ const isHomePage = currentPath === "/";
           <div class="footer-links-royal">
             <h3>Support</h3>
             <ul>
+              <li><a href={isHomePage ? "#get-started" : "/#get-started"}>Get Started</a></li>
               <li><a href="/contact">Contact Us</a></li>
               <li><a href="/faqs">FAQs</a></li>
             </ul>
@@ -67,15 +66,11 @@ const isHomePage = currentPath === "/";
             <ul>
               <li>
                 <Image src={locationIcon} alt="" />
-                Cubao, Quezon City, Philippines
-              </li>
-              <li>
-                <Image src={phoneIcon} alt="" />
-                <a href="tel:+639452333911">+(63) 945 233 3911</a>
+                Quezon City, Philippines
               </li>
               <li>
                 <Image src={mailIcon} alt="" />
-                <a class="text-lowercase" href="mailto:bodybyals@gmail.com">bodybyals@gmail.com</a>
+                <a class="text-lowercase" href="mailto:bodybyals.business@gmail.com">bodybyals.business@gmail.com</a>
               </li>
             </ul>
           </div>
