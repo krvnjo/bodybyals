@@ -6,12 +6,9 @@ import transformation2 from "@/assets/images/transformations/transformation-2.pn
 import transformation3 from "@/assets/images/transformations/transformation-3.png";
 import transformation4 from "@/assets/images/transformations/transformation-4.png";
 
-const transformations = [
-  transformation1,
-  transformation2,
-  transformation3,
-  transformation4,
-];
+const transformations = [transformation1, transformation2, transformation3, transformation4];
+
+const INITIAL_COUNT = 4;
 
 const testimonials = [
   {
@@ -20,7 +17,6 @@ const testimonials = [
     title: "From XXL to M — a complete lifestyle change!",
     quote:
       "From size XXL to M! Thank you Coach Anton for the fitness and nutrition guidance. I've never felt more comfortable in my body than now — all of this while fixing my relationship with food. I didn't get a diet — I got a lifestyle change and I'm never letting it go.",
-    delay: null,
   },
   {
     name: "Sofie",
@@ -28,7 +24,6 @@ const testimonials = [
     title: "1 year transformation done in 6 months!",
     quote:
       "1 year transformation but did it in 6 months! now i don't document na but still try to keep with the diet + workouts, its good for maintenance and prep my body for future children!",
-    delay: "0.2s",
   },
   {
     name: "Toni Sia",
@@ -36,7 +31,6 @@ const testimonials = [
     title: "3 years of consistency changed my life!",
     quote:
       "3 years of consistency, baby! Malayo pa, pero malayo na, Proud of you, self Usually I'd be hesitant to post my workout and fitness always videos but big thanks to my coach @BODYBYALS for pushing me. This journey hasn't been easy but it change my life in so many ways.",
-    delay: "0.4s",
   },
   {
     name: "King Sia",
@@ -44,7 +38,6 @@ const testimonials = [
     title: "Lost fat while building muscles!",
     quote:
       "The meal plan has been a great help to us. I noticed how my body was able to drop weight in just 2 weeks. Also, I love how the meal plan consists of healthy fats & enough protein for body building (which is my goal🙈). Best thing I noticed was I was able to lose fat while building muscles. I also wanna commend how the bodybyals meal plan is very filling and I find myself snacking way less.",
-    delay: "0.6s",
   },
   {
     name: "Paula D. Paz",
@@ -52,7 +45,90 @@ const testimonials = [
     title: "Never thought I'd fit into an XS!",
     quote:
       "With proper guidance, dedication, and consistency (all thanks to my trainer!), I've made progress I never imagined! Never did I think I'd fit into an XS. Today, movement is an integral part of my life, something I can't live without. I'm fit, but more importantly, I'm strong and disciplined.",
-    delay: "0.8s",
+  },
+  {
+    name: "The King Family",
+    job: "",
+    title: "Weight Loss",
+    quote:
+      "I've been with @bodybyals for 3 months now. and Coach Anton has been guiding me through every aspect, from diet to exercise. I can always reach out to him whenever I have questions about my fitness journey. I can confidently say that his program is effective. By simply following the meal plan and exercise routine he provides, I have already lost 12lbs since starting my journey. It's been incredibly easy to follow. Some of my current clothes are now too loose, and I can even fit into my old ones again. My family members have also noticed my weight loss progress. I'm excited to start phase 2 of my fitness journey with @bodybyals. Looking forward to continuing for a full year!",
+  },
+  {
+    name: "Jay Anne Patricia Abe",
+    job: "",
+    title: "Reduced Bloating",
+    quote:
+      "Since we started, for me personally I feel less bloated so far and less cravings as well. When we do eat our cheat meals, we noticed our appetite are not the same as before. We cannot finish a big portion of what we usually eat. Me and my husband noticed naman some clothes fitting better. When we started weighing ourselves 2 weeks ago to start the workout plan, the following week, we both lost 1 point something kg.",
+  },
+  {
+    name: "Samantha Erika",
+    job: "",
+    title: "Increased Energy Levels",
+    quote:
+      "Before starting po, I was always sleepy and that's honestly why I used to drink coffee almost every day. Since I started the program I've noticed a huge difference in my energy levels. I'm no longer sleepy in the afternoons, and my energy now lasts the whole day. Overall, I'm really happy with the changes so far, especially with my energy, digestion, and overall relationship with food.",
+  },
+  {
+    name: "Paula",
+    job: "",
+    title: "Improved Physical and Mental Well-being",
+    quote:
+      "Coach! First ko nakita pumayat face ko and I feel like I'm getting toned! May konti pang baby fat but not like before. I think tumitigas na tyan ko lol sana! Onte pa just discipline and consistency! Yehey! All ready for my Hawaiiiiii trip. And because I decided to fully commit and kinuha ko full program it qives me a new different and better routine. As in!!!! IT DID NOT JUST HELP ME physically BUT mentally TOO.",
+  },
+  {
+    name: "K",
+    job: "",
+    title: "Reduced Cravings",
+    quote:
+      "Huge thanks for the nutrition guide coach I noticed din rare na ko magka-cravings overall (either sweets or junk food) and I don't get energy crashes anymore unlike nung dependent ako sa sugar. Most noticable for me is na-trim down yung sides ng tummy area ko (which i always found hard to lose nahaha), my arms don't feel as flabby as before and pumayat face ko, which was always bloated din :D",
+  },
+  {
+    name: "BODYBYALS Client",
+    job: "",
+    title: "Relief from Hyperacidity",
+    quote:
+      "I had hyperacidity since 2017. Ever since I can't leave my house without antacids haha! Since switching to my nutrition guide, I'm now able to function (for 2 weeks so far) without relying on it. Noticed din pala that spicy food/korean don't trigger my stomach na so I get to enjoy them as much as I can! Feel less bloated after meals. Thanks so much coach!",
+  },
+  {
+    name: "Venice Alvarez",
+    job: "",
+    title: "Healthier Digestion",
+    quote:
+      "I had acidity before and indigestion. I also have PCOS but I haven't visited the doctor recently. As for the acidity and indigestion my burping nights were gone. Dati may nights na ang hirap matulog kasi I ate a lot or ndi ako matunawan. But now I feel lighter na as in. And bonus pa is I was suddenly happy with how the fitting of my wedding gown sa body ko. So I bought the gown Jan 4. Tapos nakakaiyak lang coach kc ang ganda ng fit nya sakin., and all this time pala gusto ko ung gown and gusto ko syang tube hindi lang ako confident sa arms ko.",
+  },
+  {
+    name: "Michelle",
+    job: "",
+    title: "Greater Confidence",
+    quote:
+      "I have never felt so good and confident since I started my program with you coach. Its been four weeks since I started your program but the change is already obvious. A lot of people have been noticing how i lose weight now. I feel healthy and energize everyday. I dont feel lazy. Enrolling in your program is the best decision I ever made this year!",
+  },
+  {
+    name: "Ava Mari",
+    job: "",
+    title: "Super Mom Unlocked",
+    quote:
+      "I feel stronger and I don't get tired easily. It's easy for me to carry my toddler already. I love the program and nutrition guide. I lost weight already and I'm building muscle.",
+  },
+  {
+    name: "Mary Ann Venice",
+    job: "",
+    title: "Wedding Bride Progress",
+    quote:
+      "From 68kgs to 64kgs. Didn't lose a lot but this fitness journey made me feel confident especially on my big day. originally, I had detachable sleeves on my wedding gown but when I lost weight, I felt confident wearing it as is. Thanks to @bodybyals for the online nutrition guide. I don't have time to go to gym so I only did his home workouts + diet.",
+  },
+  {
+    name: "Sarah Mae Lugtu",
+    job: "",
+    title: "Reversed PCOS",
+    quote:
+      "After weeks po, nagregulate ulit mens ko and kumalma yung mga pimples ko! Hay. Thank you po sa lahat ng tips, hanggang ngayon madali parin silang sundan!🤍🥺",
+  },
+  {
+    name: "Aleinna Kim",
+    job: "",
+    title: "Balanced Hormones Supporting Fertility",
+    quote:
+      "Hello po, I just found out l'm pregnant. I have been following the guide since last wednesday but had to start adding some carbs to my diet. At this point I might just follow the workout plan po actually my clothes been fitting better and not too tight but I guess I need to hold off sa diet part.😊",
   },
 ];
 ---
@@ -67,11 +143,11 @@ const testimonials = [
         <div class="col-lg-12">
           <!-- Page Header Box Start -->
           <div class="page-header-box">
-            <h1 class="text-anime-style-3" data-cursor="-opaque">Client Testimonials</h1>
+            <h1 class="text-anime-style-3" data-cursor="-opaque">Client Transformations</h1>
             <nav class="wow fadeInUp">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Testimonials</li>
+                <li class="breadcrumb-item active" aria-current="page">Transformations</li>
               </ol>
             </nav>
           </div>
@@ -132,13 +208,11 @@ const testimonials = [
   <!-- Page Testimonials Start -->
   <div class="page-testimonials">
     <div class="container">
-      <div class="row">
+      <div class="row" id="testimonials-grid">
         {
-          testimonials.map((testimonial) => (
-            <div class="col-md-6">
-              <!-- Testimonial Item Start -->
-              <div class="testimonial-item wow fadeInUp" data-wow-delay={testimonial.delay}>
-                <!-- Testimonial Item Header Start -->
+          testimonials.map((testimonial, index) => (
+            <div class:list={["col-md-6", "testimonial-col", { hidden: index >= INITIAL_COUNT }]}>
+              <div class="testimonial-item wow fadeInUp" data-wow-delay={`${(index % 2) * 0.2}s`}>
                 <div class="testimonial-item-header">
                   <div class="testimonial-item-rating">
                     <i class="fa fa-solid fa-star" />
@@ -152,35 +226,61 @@ const testimonials = [
                     <p>"{testimonial.quote}"</p>
                   </div>
                 </div>
-                <!-- Testimonial Item Header End -->
 
-                <!-- Testimonial Item Body Start -->
                 <div class="testimonial-item-body">
-                  <!-- Testimonial Item Author Start -->
                   <div class="testimonial-item-author">
                     <div class="testimonial-author-content">
                       <h3>{testimonial.name}</h3>
                       <p>{testimonial.job}</p>
                     </div>
                   </div>
-                  <!-- Testimonial Item Author End -->
 
-                  <!-- Testimonial Quotes Image Start -->
                   <div class="testimonials-item-quotes">
                     <figure>
                       <img src="/images/testimonial-quote-emerald.svg" alt="" />
                     </figure>
                   </div>
-                  <!-- Testimonial Quotes Image End -->
                 </div>
-                <!-- Testimonial Item Body End -->
               </div>
-              <!-- Testimonial Item End -->
             </div>
           ))
         }
       </div>
+
+      <!-- Show More Button Start -->
+      <div class="row">
+        <div class="col-lg-12 text-center mt-4">
+          <button id="show-more-btn" class="btn-default" type="button">Show More</button>
+        </div>
+      </div>
+      <!-- Show More Button End -->
     </div>
   </div>
   <!-- Page Testimonials End -->
 </Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("show-more-btn");
+    const hiddenItems = document.querySelectorAll(".testimonial-col.hidden");
+
+    if (!btn) return;
+
+    if (hiddenItems.length === 0) {
+      btn.style.display = "none";
+      return;
+    }
+
+    let expanded = false;
+
+    btn.addEventListener("click", () => {
+      expanded = !expanded;
+
+      hiddenItems.forEach((item) => {
+        item.classList.toggle("hidden", !expanded);
+      });
+
+      btn.textContent = expanded ? "Show Less" : "Show More";
+    });
+  });
+</script>

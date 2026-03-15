@@ -412,3 +412,11 @@
     max-width: 100%;
   }
 }
+
+.testimonial-col.hidden {
+  display: none;
+}
+
+#show-more-btn {
+  cursor: pointer;
+}
