@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@lucide/astro": "^0.563.0",
-    "astro": "^5.17.1"
+    "astro": "^6.0.5"
   },
   "devDependencies": {
     "prettier": "^3.8.0",

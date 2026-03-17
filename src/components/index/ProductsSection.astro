@@ -7,27 +7,24 @@ import mealPlan from "@/assets/images/products/meal-plan.png";
 const products = [
   {
     image: shiratakiRice,
-    counter: "0",
-    suffix: "g carbs",
-    title: "Dry Shirataki Rice",
+    suffix: "Dry Shirataki Rice",
+    title: "28 calories per serving",
     description:
       "Low-carb rice alternative made from konjac. Virtually calorie-free, high in fiber, and easy to prepare.",
     delay: null,
   },
   {
     image: ketoBreadImage,
-    counter: "15",
-    suffix: "g protein",
-    title: "Keto Bread",
+    suffix: "Keto Bread",
+    title: "17 g of protein per slice",
     description:
       "Low-carb, high-protein bread made with almond flour. Perfect for sandwiches, toast, or your favorite spreads.",
     delay: "0.2s",
   },
   {
     image: mealPlan,
-    counter: "100",
-    suffix: "%",
-    title: "Meal Plan",
+    suffix: "Meal Plan",
+    title: "The Insulin Sensitivity Reset Diet",
     description:
       "Low-carb, high-protein meals designed to balance hormones, not count calories. Juicy, tasty, and filling.",
     delay: "0.4s",
@@ -67,10 +64,7 @@ const products = [
               </div>
               <div class="key-fact-item-body">
                 <div class="key-fact-item-counter">
-                  <h2>
-                    <span class="counter">{product.counter}</span>
-                    {product.suffix}
-                  </h2>
+                  <h2>{product.suffix}</h2>
                 </div>
                 <div class="key-fact-item-content">
                   <h3>{product.title}</h3>

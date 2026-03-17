@@ -1,51 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Dumbbell, Headset, LandPlot, MessagesSquare, Gift, ShieldCheck, UserCheck } from "@lucide/astro/icons/index";
+import { Dumbbell, UtensilsCrossed, Gift, ShieldCheck, UserCheck } from "@lucide/astro/icons/index";
 
 const services = [
   {
-    title: "Online Fitness Coaching",
+    title: "Online Coaching & Nutrition Guide",
     icon: Dumbbell,
     features: [
-      "Easy-to-follow workout programs",
-      "Proper form guidance",
-      "Tailored to your lifestyle and goals",
-      "Build confidence and stay consistent",
+      "Easy-to-follow workouts you can do anytime, anywhere — no gym required",
+      "A sustainable nutrition guide — helps you pick the right foods and ingredients, know what to eat, when to eat, and what to avoid while still enjoying your favorite foods",
+      "A complete program to help you get fit, healthy, and confident",
+      "Chat support throughout the program",
+      "Programs available: 3 months, 6 months, or 1 year Transformation Program",
     ],
     delay: null,
   },
   {
-    title: "Personalized Nutrition Plan",
-    icon: LandPlot,
+    title: "Meal Plan Service",
+    icon: UtensilsCrossed,
     features: [
-      "Learn what and when to eat",
-      "Know what to avoid",
-      "Enjoy your favorite foods guilt-free",
-      "Guided by Coach Anton",
+      "We focus on balancing hormones, not counting calories",
+      "High-protein and low-carb meal plan",
+      "Seed-oil free",
+      "Also known as the Insulin Sensitivity Reset Diet",
+      "Features premium, high-quality ingredients like USDA Prime ribeye steak, fresh salmon, chicken, beef, eggs, and fresh salads",
+      "Delivery within Metro Manila",
+      "Delivery fees apply depending on your location",
     ],
     delay: "0.2s",
-  },
-  {
-    title: "Chat Support",
-    icon: MessagesSquare,
-    features: [
-      "Submit meal photos anytime",
-      "Share your progress updates",
-      "Get guidance every step of the way",
-      "Direct access to your coach",
-    ],
-    delay: "0.4s",
-  },
-  {
-    title: "Free Consultation",
-    icon: Headset,
-    features: [
-      "Understand the program fully",
-      "Get all your questions answered",
-      "Goal assessment session",
-      "No commitment required",
-    ],
-    delay: "0.6s",
   },
 ];
 ---
@@ -81,7 +63,7 @@ const services = [
       <div class="row">
         {
           services.map((service) => (
-            <div class="col-xl-3 col-md-6">
+            <div class="col-xl-6 col-md-6">
               <div class="pricing-item wow fadeInUp" data-wow-delay={service.delay}>
                 <div class="pricing-item-header">
                   <div class="pricing-item-header-box">
