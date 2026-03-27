@@ -1,11 +1,11 @@
 ---
-import { Dumbbell, UtensilsCrossed, MessagesSquare, Headset } from "@lucide/astro/icons/index";
+import { Dumbbell, UtensilsCrossed } from "@lucide/astro/icons/index";
 
 const services = [
   {
     title: "Online Coaching & Nutrition Guide",
     description:
-      "Easy-to-follow workouts you can do anytime, anywhere. Includes a sustainable nutrition guide to help you pick the right foods, know what and when to eat, and still enjoy your favorites.",
+      "A complete program to help you get fit, healthy, and confident. Easy-to-follow workouts you can do anytime, anywhere — no gym required. Includes a sustainable nutrition guide that teaches you what to eat, when to eat, and what to avoid, plus chat support throughout your transformation journey.",
     tag: "All Fitness Levels",
     icon: Dumbbell,
     delay: null,
@@ -13,25 +13,10 @@ const services = [
   {
     title: "Meal Plan Service",
     description:
-      "High-protein, low-carb, seed-oil free meals delivered to you. We focus on balancing hormones, not counting calories. Features USDA Prime ribeye, salmon, and more.",
+      "High-protein, low-carb meals designed to balance hormones, not count calories. Seed-oil free and chef-prepared using premium ingredients like USDA Prime ribeye steak, fresh salmon, chicken, and fresh salads. Delivery available within Metro Manila.",
     tag: "Insulin Sensitivity Reset Diet",
     icon: UtensilsCrossed,
     delay: "0.2s",
-  },
-  {
-    title: "Chat Support",
-    description: "Share your meal photos and progress updates anytime, and we'll guide you every step of the way.",
-    tag: "Real-Time Feedback",
-    icon: MessagesSquare,
-    delay: "0.4s",
-  },
-  {
-    title: "Free Consultation",
-    description:
-      "Not sure where to start? Book a free consultation to understand the program and get all your questions answered.",
-    tag: "Goal Assessment",
-    icon: Headset,
-    delay: "0.6s",
   },
 ];
 
@@ -51,10 +36,10 @@ const footerTags = ["Weight Loss", "Body Transformation", "Custom Meal Plans", "
       </div>
     </div>
 
-    <div class="row">
+    <div class="row justify-content-center">
       {
         services.map((service) => (
-          <div class="col-xl-3 col-md-6">
+          <div class="col-xl-6 col-md-6">
             <div data-wow-delay={service.delay} class="features-item-elite wow fadeInUp">
               <div class="features-item-content-elite">
                 <div class="features-item-header-elite">
