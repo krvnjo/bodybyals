@@ -77,6 +77,9 @@
         clickable: true,
       },
       breakpoints: {
+        568: {
+          slidesPerView: 2,
+        },
         768: {
           slidesPerView: 3,
         },

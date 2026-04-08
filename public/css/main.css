@@ -98,7 +98,14 @@ body {
   background-color: var(--primary-color);
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--accent-color) 0%, var(--accent-secondary-color) 100%);
+  background: linear-gradient(
+    to top,
+    var(--accent-color) 0%,
+    #33a033 30%,
+    #66bf66 50%,
+    #33a033 70%,
+    var(--accent-color) 100%
+  );
 }
 
 ::selection {
