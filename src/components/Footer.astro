@@ -18,7 +18,7 @@ const isHomePage = currentPath === "/";
         <div class="about-footer-royal">
           <!-- Footer Logo Start -->
           <div class="footer-logo-royal">
-            <Image src={footerLogo} alt="" />
+            <Image src={footerLogo} alt="BodyByAls Logo" style="width: 165px; height: 50px;" />
           </div>
           <!-- Footer Logo End -->
 
@@ -54,7 +54,6 @@ const isHomePage = currentPath === "/";
             <h3>Support</h3>
             <ul>
               <li><a href={isHomePage ? "#get-started" : "/#get-started"}>Get Started</a></li>
-              <li><a href="/contact">Contact Us</a></li>
               <li><a href="/faqs">FAQs</a></li>
             </ul>
           </div>
@@ -129,6 +128,7 @@ const isHomePage = currentPath === "/";
   document.querySelectorAll(".footer-links-royal h3").forEach((header) => {
     header.addEventListener("click", () => {
       const parent = header.parentElement;
+      if (!parent) return;
 
       // Close others
       document.querySelectorAll(".footer-links-royal").forEach((item) => {

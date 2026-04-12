@@ -5,8 +5,21 @@ import transformation1 from "@/assets/images/transformations/transformation-1.pn
 import transformation2 from "@/assets/images/transformations/transformation-2.png";
 import transformation3 from "@/assets/images/transformations/transformation-3.png";
 import transformation4 from "@/assets/images/transformations/transformation-4.png";
+import transformation5 from "@/assets/images/transformations/transformation-5.png";
+import transformation6 from "@/assets/images/transformations/transformation-6.png";
+import transformation7 from "@/assets/images/transformations/transformation-7.png";
+import transformation8 from "@/assets/images/transformations/transformation-8.png";
 
-const transformations = [transformation1, transformation2, transformation3, transformation4];
+const transformations = [
+  transformation1,
+  transformation2,
+  transformation3,
+  transformation4,
+  transformation5,
+  transformation6,
+  transformation7,
+  transformation8,
+];
 
 const INITIAL_COUNT = 4;
 
@@ -178,7 +191,7 @@ const testimonials = [
         <!-- Transformations Slider Start -->
         <div class="our-interface-slider">
           <div class="swiper">
-            <div data-cursor-text="Drag" class="swiper-wrapper">
+            <div class="swiper-wrapper">
               {
                 transformations.map((image, index) => (
                   <div class="swiper-slide">
