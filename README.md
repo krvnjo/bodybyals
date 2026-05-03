@@ -5,7 +5,7 @@ A fitness coaching website built with Astro for Coach Anton Soler's BodyByAls br
 ## 🚀 Tech Stack
 
 - **Framework:** Astro
-- **Styling:** Bootstrap 5, Tailwind CSS, Custom CSS
+- **Styling:** Bootstrap 5, Custom CSS
 - **Animations:** WOW.js, Swiper.js
 - **Icons:** Lucide Astro, Font Awesome
 
