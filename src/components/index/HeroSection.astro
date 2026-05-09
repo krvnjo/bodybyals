@@ -4,13 +4,59 @@
 
 <!-- Hero Section Start -->
 <section class="hero-elite bg-section hero-bg">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <!-- Hero Content Start -->
-        <div class="hero-content-royal"></div>
-        <!-- Hero Content End -->
+  <div id="heroCarousel" class="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel" data-bs-interval="4500">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <picture>
+          <source media="(max-width: 767px)" srcset="https://placehold.co/768x1024/2d3748/ffffff?text=Slide+1" />
+          <source media="(max-width: 991px)" srcset="https://placehold.co/992x744/2d3748/ffffff?text=Slide+1" />
+          <source media="(max-width: 1199px)" srcset="https://placehold.co/1200x900/2d3748/ffffff?text=Slide+1" />
+          <img
+            src="https://placehold.co/1920x930/2d3748/ffffff?text=Slide+1"
+            class="d-block w-100 hero-carousel__image"
+            alt="Slide 1"
+          />
+        </picture>
       </div>
+      <div class="carousel-item">
+        <picture>
+          <source media="(max-width: 767px)" srcset="https://placehold.co/768x1024/4a5568/ffffff?text=Slide+2" />
+          <source media="(max-width: 991px)" srcset="https://placehold.co/992x744/4a5568/ffffff?text=Slide+2" />
+          <source media="(max-width: 1199px)" srcset="https://placehold.co/1200x900/4a5568/ffffff?text=Slide+2" />
+          <img
+            src="https://placehold.co/1920x930/4a5568/ffffff?text=Slide+2"
+            class="d-block w-100 hero-carousel__image"
+            alt="Slide 2"
+          />
+        </picture>
+      </div>
+      <div class="carousel-item">
+        <picture>
+          <source media="(max-width: 767px)" srcset="https://placehold.co/768x1024/1a202c/ffffff?text=Slide+3" />
+          <source media="(max-width: 991px)" srcset="https://placehold.co/992x744/1a202c/ffffff?text=Slide+3" />
+          <source media="(max-width: 1199px)" srcset="https://placehold.co/1200x900/1a202c/ffffff?text=Slide+3" />
+          <img
+            src="https://placehold.co/1920x930/1a202c/ffffff?text=Slide+3"
+            class="d-block w-100 hero-carousel__image"
+            alt="Slide 3"
+          />
+        </picture>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
   </div>
 </section>

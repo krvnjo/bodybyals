@@ -10,42 +10,42 @@ const isHomePage = currentPath === "/";
   <div class="header-sticky bg-section">
     <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <!-- Logo Start -->
+        <!-- Logo -->
         <a href="/" class="navbar-brand">
           <Image src={mainLogo} alt="BodyByAls Logo" style="width: 165px; height: 50px;" />
         </a>
-        <!-- Logo End -->
 
-        <!-- Main Menu Start -->
-        <div class="collapse navbar-collapse main-menu">
+        <!-- Bootstrap Toggler -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarMenu"
+          aria-controls="navbarMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Main Menu -->
+        <div class="collapse navbar-collapse main-menu" id="navbarMenu">
           <div class="nav-menu-wrapper">
             <ul id="menu" class="navbar-nav mr-auto">
               <li class="nav-item"><a href={isHomePage ? "#about" : "/#about"} class="nav-link">About</a></li>
               <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
               <li class="nav-item"><a href="/products" class="nav-link">Products</a></li>
-              <li class="nav-item">
-                <a href="/transformations" class="nav-link">Transformations</a>
-              </li>
+              <li class="nav-item"><a href="/transformations" class="nav-link">Transformations</a></li>
               <li class="nav-item"><a href="/faqs" class="nav-link">FAQs</a></li>
             </ul>
           </div>
 
-          <!-- Get Started Btn Start -->
+          <!-- Get Started Btn -->
           <div class="header-btn">
             <a href={isHomePage ? "#get-started" : "/#get-started"} class="btn-default btn-highlighted">Get Started</a>
           </div>
-          <!-- Get Started Btn End -->
         </div>
-        <!-- Main Menu End -->
-
-        <!-- Navbar Toggle Start -->
-        <div class="navbar-toggle"></div>
-        <!-- Navbar Toggle End -->
       </div>
     </nav>
-    <!-- Slicknav Menu Start -->
-    <div class="responsive-menu text-light"></div>
-    <!-- Slicknav Menu End -->
   </div>
 </header>
 <!-- Header End -->

@@ -4,119 +4,61 @@
 }
 
 /* Hero — Desktop (default, ≥992) */
-.hero-bg {
-  background-image: url("../images/hero-bg-latest-1.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .hero-elite.hero-bg {
-  height: 1200px;
-  padding-top: 160px;
-  padding-bottom: 60px;
+  position: relative;
+  aspect-ratio: 1880 / 908;
+  min-height: 850px;
+  padding: 0;
+  overflow: hidden;
+  background: none;
 }
 
-.hero-elite .section-title {
+.hero-carousel,
+.hero-carousel .carousel-inner,
+.hero-carousel .carousel-item {
+  height: 100%;
+}
+
+.hero-carousel__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-carousel .carousel-indicators {
+  z-index: 4;
   margin-bottom: 30px;
 }
 
-.hero-elite .section-title h1 {
-  font-size: 56px;
+.hero-carousel .carousel-control-prev,
+.hero-carousel .carousel-control-next {
+  z-index: 4;
+  width: 6%;
+  opacity: 0.6;
 }
 
-.hero-elite .section-title p {
-  font-size: 17px;
-}
-
-.hero-elite .hero-content-royal {
-  margin-top: 20px;
-}
-
-.hero-elite .section-title h1,
-.hero-elite .section-title h3,
-.hero-elite .section-title p {
-  text-shadow:
-    0 2px 16px rgba(0, 0, 0, 0.85),
-    0 0 2px rgba(0, 0, 0, 0.6);
-}
-
-@media (max-width: 1250px) {
-  .hero-elite.hero-bg {
-    height: 1100px;
-  }
-}
-
-@media (max-width: 1100px) {
-  .hero-elite.hero-bg {
-    height: 980px;
-  }
-
-  .hero-elite .section-title h1 {
-    font-size: 48px;
-  }
+.hero-carousel .carousel-control-prev:hover,
+.hero-carousel .carousel-control-next:hover {
+  opacity: 1;
 }
 
 /* Hero — Tablet (≤991) */
 @media (max-width: 991px) {
   .hero-elite.hero-bg {
-    background-image: url("../images/hero-bg-latest-2.png");
-    height: 800px;
-    padding-top: 130px;
-    padding-bottom: 40px;
-  }
-
-  .hero-elite .section-title h1 {
-    font-size: clamp(30px, 6vw, 48px);
-  }
-
-  .hero-elite .section-title p {
-    font-size: 15px;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
   }
 }
 
-@media (max-width: 800px) {
+/* Hero — Mobile (≤767) */
+@media (max-width: 767px) {
   .hero-elite.hero-bg {
-    height: 600px;
-    padding-top: 100px;
-  }
-
-  .hero-elite .section-title h1 {
-    font-size: 32px;
+    min-height: 0;
+    aspect-ratio: 3 / 4;
   }
 }
 
-/* Hero — Mobile (≤576) */
-@media (max-width: 576px) {
-  .hero-elite.hero-bg {
-    background-image: url("../images/hero-bg-latest-3.png");
-    height: 450px;
-    padding-top: 115px;
-  }
-
-  .hero-elite .section-title h1 {
-    font-size: clamp(22px, 5.5vw, 28px);
-  }
-
-  .hero-elite .section-title p {
-    font-size: 13px;
-  }
-
-  .hero-elite .hero-content-royal {
-    margin-top: 10px;
-  }
-}
-
-@media (max-width: 400px) {
-  .hero-elite.hero-bg {
-    height: 380px;
-    padding-top: 100px;
-  }
-
-  .hero-elite .section-title h1 {
-    font-size: 20px;
-  }
-}
 .service-footer-text {
   color: #4b5563 !important;
 }
@@ -137,8 +79,38 @@
   border-bottom-color: var(--accent-color);
 }
 
-.fa-star {
-  color: #eab308 !important;
+.star-rating-icon {
+  width: 18px;
+  height: 18px;
+  color: #eab308;
+  vertical-align: middle;
+}
+
+.footer-social-links-elite svg {
+  width: 16px;
+  height: 16px;
+}
+
+
+/* Tighter gap between transformations carousel and testimonials grid */
+.page-testimonials {
+  padding-top: 20px;
+}
+
+/* Mobile menu toggler — match brand green like the Get Started CTA */
+.navbar-toggler {
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .faq-btn .btn-default:hover::before {
@@ -330,9 +302,9 @@
   white-space: nowrap;
 }
 
+.page-team-single,
 .page-team-single.py-3 {
-  padding-top: 1rem !important;
-  padding-bottom: 1rem !important;
+  padding: 0.25rem 0 !important;
 }
 
 .page-team-single-box.p-4 {

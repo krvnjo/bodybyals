@@ -15,6 +15,7 @@
   "devDependencies": {
     "prettier": "^3.8.0",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-organize-attributes": "^1.0.0"
+    "prettier-plugin-organize-attributes": "^1.0.0",
+    "purgecss": "^8.0.0"
   }
 }

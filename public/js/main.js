@@ -1,319 +1,144 @@
-(function ($) {
+(function () {
   "use strict";
 
-  const $window = $(window);
+  const $ = (sel) => document.querySelector(sel);
+  const $$ = (sel) => document.querySelectorAll(sel);
 
   /* Preloader Effect */
-  $window.on("load", function () {
-    $(".preloader").fadeOut(600);
+  window.addEventListener("load", () => {
+    const preloader = $(".preloader");
+    if (!preloader) return;
+    preloader.style.transition = "opacity 600ms";
+    preloader.style.opacity = "0";
+    setTimeout(() => (preloader.style.display = "none"), 600);
   });
 
-  /* Sticky Header */
-  if ($(".active-sticky-header").length) {
-    $window.on("resize", function () {
-      setHeaderHeight();
-    });
-
-    function setHeaderHeight() {
-      $("header.active-sticky-header").css("height", $("header.active-sticky-header .header-sticky").outerHeight());
-    }
-
-    $window.on("scroll", function () {
-      const fromTop = $(window).scrollTop();
-      const stickyHeader = document.querySelector("header.active-sticky-header .header-sticky");
-      setHeaderHeight();
-      const headerHeight = stickyHeader.outerHeight();
-      stickyHeader.toggleClass("hide", fromTop > headerHeight + 100);
-      stickyHeader.toggleClass("active", fromTop > 600);
-    });
-  }
-
-  /* Slick Menu JS */
-  $("#menu").slicknav({
-    label: "",
-    prependTo: ".responsive-menu",
+  /* Smooth scroll to top for any a[href="#top"] */
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest('a[href="#top"]');
+    if (!link) return;
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  if ($("a[href='#top']").length) {
-    $(document).on("click", "a[href='#top']", function () {
-      $("html, body").animate({ scrollTop: 0 }, "slow");
-      return false;
-    });
-  }
-
-  /* Social-App-Slider JS */
-  if ($(".social-app-slider").length) {
-    const social_app_slider = new Swiper(".social-app-slider .swiper", {
-      slidesPerView: 4,
-      speed: 2000,
-      spaceBetween: 40,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-      },
-      breakpoints: {
-        768: {
-          slidesPerView: 6,
-        },
-        991: {
-          slidesPerView: 9,
+  /* Swiper sliders — initialize each only if its container exists on the page */
+  const swiperConfigs = [
+    {
+      selector: ".social-app-slider",
+      opts: {
+        slidesPerView: 4,
+        speed: 2000,
+        spaceBetween: 40,
+        loop: true,
+        autoplay: { delay: 5000 },
+        breakpoints: {
+          768: { slidesPerView: 6 },
+          991: { slidesPerView: 9 },
         },
       },
-    });
-  }
-
-  /* Social-App-Slider JS */
-  if ($(".our-interface-slider").length) {
-    const our_interface_slider = new Swiper(".our-interface-slider .swiper", {
-      slidesPerView: 1,
-      speed: 2000,
-      spaceBetween: 30,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-      },
-      pagination: {
-        el: ".interface-pagination",
-        clickable: true,
-      },
-      breakpoints: {
-        568: {
-          slidesPerView: 2,
-        },
-        768: {
-          slidesPerView: 3,
-        },
-        1025: {
-          slidesPerView: 4,
+    },
+    {
+      selector: ".our-interface-slider",
+      opts: {
+        slidesPerView: 1,
+        speed: 2000,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: { delay: 5000 },
+        pagination: { el: ".interface-pagination", clickable: true },
+        breakpoints: {
+          568: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          1025: { slidesPerView: 4 },
         },
       },
-    });
-  }
-
-  /* testimonial Slider JS */
-  if ($(".testimonial-slider").length) {
-    const testimonial_slider = new Swiper(".testimonial-slider .swiper", {
-      slidesPerView: 1,
-      speed: 1000,
-      spaceBetween: 30,
-      loop: true,
-      autoplay: {
-        delay: 5000,
+    },
+    {
+      selector: ".testimonial-slider",
+      opts: {
+        slidesPerView: 1,
+        speed: 1000,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: { delay: 5000 },
+        pagination: { el: ".testimonial-pagination", clickable: true },
+        navigation: { nextEl: ".testimonial-button-next", prevEl: ".testimonial-button-prev" },
       },
-      pagination: {
-        el: ".testimonial-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".testimonial-button-next",
-        prevEl: ".testimonial-button-prev",
-      },
-      breakpoints: {
-        768: {
-          slidesPerView: 1,
-        },
-        991: {
-          slidesPerView: 1,
-        },
-      },
-    });
-  }
-
-  /* company-supports-slider JS */
-  if ($(".company-supports-slider").length) {
-    const company_supports_slider = new Swiper(".company-supports-slider .swiper", {
-      slidesPerView: 2,
-      speed: 1000,
-      spaceBetween: 30,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-      },
-      pagination: {
-        el: ".testimonial-pagination",
-        clickable: true,
-      },
-      breakpoints: {
-        768: {
-          slidesPerView: 3,
-        },
-        991: {
-          slidesPerView: 4,
-        },
-        1025: {
-          slidesPerView: 5,
+    },
+    {
+      selector: ".company-supports-slider",
+      opts: {
+        slidesPerView: 2,
+        speed: 1000,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: { delay: 5000 },
+        pagination: { el: ".testimonial-pagination", clickable: true },
+        breakpoints: {
+          768: { slidesPerView: 3 },
+          991: { slidesPerView: 4 },
+          1025: { slidesPerView: 5 },
         },
       },
-    });
-  }
-
-  /* testimonial Slider Elite JS */
-  if ($(".testimonial-slider-elite").length) {
-    const testimonial_slider_elite = new Swiper(".testimonial-slider-elite .swiper", {
-      slidesPerView: 1,
-      speed: 1000,
-      spaceBetween: 20,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-      },
-
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
-        },
-        1200: {
-          slidesPerView: 3,
+    },
+    {
+      selector: ".testimonial-slider-elite",
+      opts: {
+        slidesPerView: 1,
+        speed: 1000,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: { delay: 5000 },
+        breakpoints: {
+          768: { slidesPerView: 2 },
+          1200: { slidesPerView: 3 },
         },
       },
-    });
-  }
-
-  /* testimonial Slider Royal JS */
-  if ($(".testimonial-slider-royal").length) {
-    const testimonial_slider_royal = new Swiper(".testimonial-slider-royal .swiper", {
-      slidesPerView: 1,
-      speed: 1000,
-      spaceBetween: 30,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-      },
-
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
-        },
-        991: {
-          slidesPerView: 2,
+    },
+    {
+      selector: ".testimonial-slider-royal",
+      opts: {
+        slidesPerView: 1,
+        speed: 1000,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: { delay: 5000 },
+        breakpoints: {
+          768: { slidesPerView: 2 },
+          991: { slidesPerView: 2 },
         },
       },
-    });
-  }
+    },
+  ];
 
-  /* Progress Bar */
-  if ($(".circle").length) {
-    $(".circle").each(function () {
-      const el = $(this).circleProgress({ value: 0 });
+  swiperConfigs.forEach(({ selector, opts }) => {
+    if (!$(selector)) return;
+    new Swiper(`${selector} .swiper`, opts);
+  });
 
-      const rawValue = $(this).data("value");
-      const progressValue = rawValue >= 1 ? 1 : rawValue;
-      const progressBarOptions = {
-        startAngle: -1.6,
-        size: 145,
-        thickness: 4,
-        fill: {
-          color: window.getComputedStyle($(this)[0]).color,
-        },
-      };
-
-      new Waypoint({
-        element: el.get(0),
-        handler: function () {
-          // Initialize the progress bar
-          el.circleProgress(
-            $.extend({}, progressBarOptions, {
-              value: el.data("value"),
-            }),
-          ).on("circle-animation-progress", function (event, progress, stepValue) {
-            var displayValue = Math.round(stepValue * 100);
-            $(this).find(".progress_value .pro_data").text(displayValue);
-          });
-
-          this.destroy();
-        },
-        offset: "80%",
-      });
-    });
-  }
-
-  /* Skill Bar */
-  if ($(".skills-progress-bar").length) {
-    $(".skills-progress-bar").waypoint(
-      function () {
-        $(".skillbar").each(function () {
-          $(this)
-            .find(".count-bar")
-            .animate(
-              {
-                width: $(this).attr("data-percent"),
-              },
-              2000,
-            );
-        });
-      },
-      {
-        offset: "70%",
-      },
-    );
-  }
-
-  /* Youtube Background Video JS */
-  if ($("#herovideo").length) {
-    var myPlayer = $("#herovideo").YTPlayer();
-  }
-
-  /* Init Counter */
-  if ($(".counter").length) {
-    $(".counter").counterUp({ delay: 6, time: 3000 });
-  }
-
-  /* Image Reveal Animation */
-  if ($(".reveal").length) {
+  /* Image Reveal Animation (GSAP) */
+  if ($(".reveal")) {
     gsap.registerPlugin(ScrollTrigger);
-    let revealContainers = document.querySelectorAll(".reveal");
-    revealContainers.forEach((container) => {
-      let image = container.querySelector("img");
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: container,
-          toggleActions: "play none none none",
-        },
+    $$(".reveal").forEach((container) => {
+      const image = container.querySelector("img");
+      const tl = gsap.timeline({
+        scrollTrigger: { trigger: container, toggleActions: "play none none none" },
       });
-      tl.set(container, {
-        autoAlpha: 1,
-      });
-      tl.from(container, 1, {
-        xPercent: -100,
-        ease: Power2.out,
-      });
-      tl.from(image, 1, {
-        xPercent: 100,
-        scale: 1,
-        delay: -1,
-        ease: Power2.out,
-      });
+      tl.set(container, { autoAlpha: 1 });
+      tl.from(container, 1, { xPercent: -100, ease: Power2.out });
+      tl.from(image, 1, { xPercent: 100, scale: 1, delay: -1, ease: Power2.out });
     });
   }
 
-  /* Text Effect Animation */
+  /* Heading text animations (GSAP + SplitText) */
   function initHeadingAnimation() {
-    if ($(".text-effect").length) {
-      var textheading = $(".text-effect");
-
-      if (textheading.length === 0) return;
+    if ($(".text-effect")) {
       gsap.registerPlugin(SplitText);
-      textheading.each(function (index, el) {
-        el.split = new SplitText(el, {
-          type: "lines,words,chars",
-          linesClass: "split-line",
-        });
-
-        if ($(el).hasClass("text-effect")) {
-          gsap.set(el.split.chars, {
-            opacity: 0.3,
-            x: "-7",
-          });
-        }
+      $$(".text-effect").forEach((el) => {
+        el.split = new SplitText(el, { type: "lines,words,chars", linesClass: "split-line" });
+        gsap.set(el.split.chars, { opacity: 0.3, x: "-7" });
         el.anim = gsap.to(el.split.chars, {
-          scrollTrigger: {
-            trigger: el,
-            start: "top 92%",
-            end: "top 60%",
-            markers: false,
-            scrub: 1,
-          },
-
+          scrollTrigger: { trigger: el, start: "top 92%", end: "top 60%", scrub: 1 },
           x: "0",
           y: "0",
           opacity: 1,
@@ -323,67 +148,44 @@
       });
     }
 
-    if ($(".text-anime-style-1").length) {
-      let staggerAmount = 0.05,
-        translateXValue = 0,
-        delayValue = 0.5,
-        animatedTextElements = document.querySelectorAll(".text-anime-style-1");
-
-      animatedTextElements.forEach((element) => {
-        let animationSplitText = new SplitText(element, { type: "chars, words" });
-        gsap.from(animationSplitText.words, {
+    if ($(".text-anime-style-1")) {
+      $$(".text-anime-style-1").forEach((element) => {
+        const split = new SplitText(element, { type: "chars, words" });
+        gsap.from(split.words, {
           duration: 1,
-          delay: delayValue,
+          delay: 0.5,
           x: 20,
           autoAlpha: 0,
-          stagger: staggerAmount,
+          stagger: 0.05,
           scrollTrigger: { trigger: element, start: "top 85%" },
         });
       });
     }
 
-    if ($(".text-anime-style-2").length) {
-      let staggerAmount = 0.03,
-        translateXValue = 20,
-        delayValue = 0.1,
-        easeType = "power2.out",
-        animatedTextElements = document.querySelectorAll(".text-anime-style-2");
-
-      animatedTextElements.forEach((element) => {
-        let animationSplitText = new SplitText(element, { type: "chars, words" });
-        gsap.from(animationSplitText.chars, {
+    if ($(".text-anime-style-2")) {
+      $$(".text-anime-style-2").forEach((element) => {
+        const split = new SplitText(element, { type: "chars, words" });
+        gsap.from(split.chars, {
           duration: 1,
-          delay: delayValue,
-          x: translateXValue,
+          delay: 0.1,
+          x: 20,
           autoAlpha: 0,
-          stagger: staggerAmount,
-          ease: easeType,
+          stagger: 0.03,
+          ease: "power2.out",
           scrollTrigger: { trigger: element, start: "top 85%" },
         });
       });
     }
 
-    if ($(".text-anime-style-3").length) {
-      let animatedTextElements = document.querySelectorAll(".text-anime-style-3");
-
-      animatedTextElements.forEach((element) => {
-        //Reset if needed
+    if ($(".text-anime-style-3")) {
+      $$(".text-anime-style-3").forEach((element) => {
         if (element.animation) {
           element.animation.progress(1).kill();
           element.split.revert();
         }
-
-        element.split = new SplitText(element, {
-          type: "lines,words,chars",
-          linesClass: "split-line",
-        });
+        element.split = new SplitText(element, { type: "lines,words,chars", linesClass: "split-line" });
         gsap.set(element, { perspective: 400 });
-
-        gsap.set(element.split.chars, {
-          opacity: 0,
-          x: "50",
-        });
-
+        gsap.set(element.split.chars, { opacity: 0, x: "50" });
         element.animation = gsap.to(element.split.chars, {
           scrollTrigger: { trigger: element, start: "top 90%" },
           x: "0",
@@ -399,98 +201,11 @@
   }
 
   if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(() => {
-      initHeadingAnimation();
-    });
+    document.fonts.ready.then(initHeadingAnimation);
   } else {
     window.addEventListener("load", initHeadingAnimation);
   }
 
-  /* Parallaxie js */
-  var $parallaxie = $(".parallaxie");
-  if ($parallaxie.length && $window.width() > 1024) {
-    if ($window.width() > 768) {
-      $parallaxie.parallaxie({
-        speed: 0.55,
-        offset: 0,
-      });
-    }
-  }
-
-  /* Zoom Gallery screenshot */
-  $(".gallery-items").magnificPopup({
-    delegate: "a",
-    type: "image",
-    closeOnContentClick: false,
-    closeBtnInside: false,
-    mainClass: "mfp-with-zoom",
-    image: {
-      verticalFit: true,
-    },
-    gallery: {
-      enabled: true,
-    },
-    zoom: {
-      enabled: true,
-      duration: 300, // don't foget to change the duration also in CSS
-      opener: function (element) {
-        return element.find("img");
-      },
-    },
-  });
-
-  /* Contact form validation */
-  const $contactform = $("#contactForm");
-  $contactform.validator({ focus: false }).on("submit", function (event) {
-    if (!event.isDefaultPrevented()) {
-      event.preventDefault();
-      submitForm();
-    }
-  });
-
-  function submitForm() {
-    /* Ajax call to submit form */
-    $.ajax({
-      type: "POST",
-      url: "form-process.php",
-      data: $contactform.serialize(),
-      success: function (text) {
-        if (text === "success") {
-          formSuccess();
-        } else {
-          submitMSG(false, text);
-        }
-      },
-    });
-  }
-
-  function formSuccess() {
-    $contactform[0].reset();
-    submitMSG(true, "Message Sent Successfully!");
-  }
-
-  function submitMSG(valid, msg) {
-    let msgClasses;
-    if (valid) {
-      msgClasses = "h4 text-success";
-    } else {
-      msgClasses = "h4 text-danger";
-    }
-    $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
-  }
-  /* Contact form validation end */
-
-  /* Animated Wow Js */
+  /* WOW.js fade-ins */
   new WOW().init();
-
-  /* Popup Video */
-  if ($(".popup-video").length) {
-    $(".popup-video").magnificPopup({
-      type: "iframe",
-      mainClass: "mfp-fade",
-      removalDelay: 160,
-      preloader: false,
-      fixedContentPos: true,
-    });
-  }
-})(jQuery);
+})();
