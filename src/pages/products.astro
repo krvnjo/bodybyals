@@ -38,8 +38,8 @@ import { products } from "@/data/products";
                   <div class="team-about-content">
                     <!-- Section Title Start -->
                     <div class="section-title">
-                      <h2 class="text-anime-style-3" data-cursor="-opaque">
-                        {product.title}
+                      <h2 class="text-anime-style-3">
+                        <a href={`/products/${product.slug}`} class="product-title-link">{product.title}</a>
                       </h2>
                       <p class="wow fadeInUp">{product.description}</p>
                     </div>

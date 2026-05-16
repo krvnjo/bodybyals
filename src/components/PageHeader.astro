@@ -2,9 +2,10 @@
 interface Props {
   title: string;
   breadcrumb: string;
+  parent?: { label: string; href: string };
 }
 
-const { title, breadcrumb } = Astro.props;
+const { title, breadcrumb, parent } = Astro.props;
 ---
 
 <!-- Page Header Section Start -->
@@ -13,10 +14,17 @@ const { title, breadcrumb } = Astro.props;
     <div class="row">
       <div class="col-lg-12">
         <div class="page-header-box">
-          <h1 class="text-anime-style-3" data-cursor="-opaque">{title}</h1>
+          <h1 class="text-anime-style-3">{title}</h1>
           <nav class="wow fadeInUp">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="/">home</a></li>
+              {
+                parent && (
+                  <li class="breadcrumb-item">
+                    <a href={parent.href}>{parent.label}</a>
+                  </li>
+                )
+              }
               <li class="breadcrumb-item active" aria-current="page">{breadcrumb}</li>
             </ol>
           </nav>

@@ -97,6 +97,222 @@
   padding-top: 20px;
 }
 
+/* Product title links on home page Products section */
+.product-title-link {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.product-title-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-title-link:hover {
+  color: var(--accent-color);
+}
+
+.product-title-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Home Products section — hover effect on image area only (zoom + diagonal shine) */
+.key-fact-item .key-fact-item-image img {
+  transition: transform 0.6s ease-in-out;
+}
+
+.key-fact-item .key-fact-item-image:hover img {
+  transform: scale(1.08);
+}
+
+/* Body scroll lock while lightbox is open */
+html.lightbox-open,
+html.lightbox-open body {
+  overflow: hidden !important;
+  height: 100%;
+}
+
+/* Lightbox — styled to match Magnific Popup */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(11, 11, 11, 0.85);
+  padding: 40px 80px;
+  animation: lightbox-fade-in 0.2s ease-out;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+@keyframes lightbox-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox__image {
+  max-width: 100%;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 44px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.lightbox__close:hover {
+  opacity: 1;
+  color: #fff;
+}
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  width: 90px;
+  height: 110px;
+  margin-top: -55px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 110px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.65;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.lightbox__nav:hover {
+  opacity: 1;
+  color: #fff;
+}
+
+.lightbox__prev {
+  left: 0;
+}
+
+.lightbox__next {
+  right: 0;
+}
+
+.lightbox__counter {
+  position: absolute;
+  bottom: 16px;
+  right: 24px;
+  color: #f3f3f3;
+  font-size: 12px;
+  line-height: 18px;
+  white-space: nowrap;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+  .lightbox {
+    padding: 24px 40px;
+  }
+  .lightbox__nav {
+    width: 50px;
+    height: 70px;
+    margin-top: -35px;
+    font-size: 36px;
+    line-height: 70px;
+  }
+}
+
+/* Product detail page — Pinterest-style masonry gallery */
+.page-team {
+  padding: 100px 0 70px;
+}
+
+.masonry-gallery {
+  column-count: 4;
+  column-gap: 20px;
+}
+
+.masonry-gallery__item {
+  display: block;
+  break-inside: avoid;
+  margin: 0 0 20px;
+  border: 1px solid var(--divider-color);
+  border-radius: 16px;
+  padding: 12px;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.masonry-gallery__item figure {
+  display: block;
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.masonry-gallery__item figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s ease-in-out;
+}
+
+.masonry-gallery__item:hover figure img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1199px) {
+  .masonry-gallery {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry-gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry-gallery {
+    column-count: 1;
+  }
+}
+
 /* Mobile menu toggler — match brand green like the Get Started CTA */
 .navbar-toggler {
   background-color: var(--accent-color);
