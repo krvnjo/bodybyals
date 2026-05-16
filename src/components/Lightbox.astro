@@ -1,0 +1,68 @@
+---
+interface Props {
+  images: string[];
+  id?: string;
+}
+
+const { images, id = "lightbox" } = Astro.props;
+---
+
+<div class="lightbox" id={id} hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox__close" aria-label="Close" data-lightbox-close>&times;</button>
+  <button class="lightbox__nav lightbox__prev" aria-label="Previous image" data-lightbox-prev>&#8249;</button>
+  <button class="lightbox__nav lightbox__next" aria-label="Next image" data-lightbox-next>&#8250;</button>
+  <img class="lightbox__image" alt="" />
+  <div class="lightbox__counter">
+    <span data-lightbox-current>1</span> of <span data-lightbox-total>{images.length}</span>
+  </div>
+</div>
+
+<script define:vars={{ images, lightboxId: id }} is:inline>
+  (() => {
+    const lightbox = document.getElementById(lightboxId);
+    if (!lightbox) return;
+    const img = lightbox.querySelector(".lightbox__image");
+    const currentEl = lightbox.querySelector("[data-lightbox-current]");
+    const totalEl = lightbox.querySelector("[data-lightbox-total]");
+    const triggers = document.querySelectorAll(`[data-lightbox-trigger="${lightboxId}"]`);
+
+    let currentIndex = 0;
+
+    const show = (index) => {
+      currentIndex = (index + images.length) % images.length;
+      img.src = images[currentIndex];
+      currentEl.textContent = currentIndex + 1;
+      totalEl.textContent = images.length;
+      lightbox.hidden = false;
+      document.documentElement.classList.add("lightbox-open");
+    };
+
+    const hide = () => {
+      lightbox.hidden = true;
+      img.src = "";
+      document.documentElement.classList.remove("lightbox-open");
+    };
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", (event) => {
+        event.preventDefault();
+        show(Number(trigger.dataset.index));
+      });
+    });
+
+    lightbox.querySelector("[data-lightbox-close]").addEventListener("click", hide);
+    lightbox.querySelector("[data-lightbox-prev]").addEventListener("click", () => show(currentIndex - 1));
+    lightbox.querySelector("[data-lightbox-next]").addEventListener("click", () => show(currentIndex + 1));
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) hide();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (lightbox.hidden) return;
+      if (event.key === "Escape") hide();
+      else if (event.key === "ArrowLeft") show(currentIndex - 1);
+      else if (event.key === "ArrowRight") show(currentIndex + 1);
+    });
+  })();
+</script>
