@@ -1,0 +1,14 @@
+---
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+
+interface Props {
+  icon: AstroComponentFactory;
+  color?: string;
+  size?: number;
+  strokeWidth?: number | string;
+}
+
+const { icon: Icon, color = "#FFFFFF", size, strokeWidth = "1.5" } = Astro.props;
+---
+
+<Icon color={color} size={size} stroke-width={strokeWidth} />

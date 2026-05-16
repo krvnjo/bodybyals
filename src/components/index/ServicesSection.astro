@@ -1,4 +1,5 @@
 ---
+import IconBox from "../IconBox.astro";
 import { Dumbbell, UtensilsCrossed } from "@lucide/astro/icons/index";
 
 const services = [
@@ -47,7 +48,7 @@ const footerTags = ["Weight Loss", "Body Transformation", "Custom Meal Plans", "
                     <h3>{service.title}</h3>
                   </div>
                   <div class="icon-box">
-                    <service.icon color="#FFFFFF" stroke-width="1.5" />
+                    <IconBox icon={service.icon} />
                   </div>
                 </div>
                 <div class="features-item-body-elite">
@@ -73,7 +74,7 @@ const footerTags = ["Weight Loss", "Body Transformation", "Custom Meal Plans", "
           </div>
           <div class="section-footer-text">
             <p>
-              Ready to start your transformation? <a href="#get-started" class="service-footer-text"
+              Ready to start your transformation? <a href="/#get-started" class="service-footer-text"
                 >Book Free Consultation</a
               >
             </p>
