@@ -17,11 +17,32 @@ import {
 
 // Keto Bread
 import ketoBread01 from "@/assets/images/products/keto-bread/keto-bread-01.png";
-import ketoBread02 from "@/assets/images/products/keto-bread/keto-bread-02.png";
+import ketoBread03 from "@/assets/images/products/keto-bread/keto-bread-03.png";
+import ketoBread04 from "@/assets/images/products/keto-bread/keto-bread-04.png";
+import ketoBread05 from "@/assets/images/products/keto-bread/keto-bread-05.png";
+import ketoBread06 from "@/assets/images/products/keto-bread/keto-bread-06.png";
+import ketoBread07 from "@/assets/images/products/keto-bread/keto-bread-07.png";
+import ketoBread08 from "@/assets/images/products/keto-bread/keto-bread-08.png";
+import ketoBread09 from "@/assets/images/products/keto-bread/keto-bread-09.png";
 
 // Meal Plan
 import mealPlan01 from "@/assets/images/products/meal-plan/meal-plan-01.png";
-import mealPlan02 from "@/assets/images/products/meal-plan/meal-plan-02.png";
+import mealPlan03 from "@/assets/images/products/meal-plan/meal-plan-03.png";
+import mealPlan04 from "@/assets/images/products/meal-plan/meal-plan-04.png";
+import mealPlan05 from "@/assets/images/products/meal-plan/meal-plan-05.png";
+import mealPlan06 from "@/assets/images/products/meal-plan/meal-plan-06.png";
+import mealPlan07 from "@/assets/images/products/meal-plan/meal-plan-07.png";
+import mealPlan08 from "@/assets/images/products/meal-plan/meal-plan-08.png";
+import mealPlan09 from "@/assets/images/products/meal-plan/meal-plan-09.png";
+import mealPlan10 from "@/assets/images/products/meal-plan/meal-plan-10.webp";
+import mealPlan11 from "@/assets/images/products/meal-plan/meal-plan-11.webp";
+import mealPlan12 from "@/assets/images/products/meal-plan/meal-plan-12.webp";
+import mealPlan13 from "@/assets/images/products/meal-plan/meal-plan-13.jpg";
+import mealPlan14 from "@/assets/images/products/meal-plan/meal-plan-14.jpg";
+import mealPlan15 from "@/assets/images/products/meal-plan/meal-plan-15.jpg";
+import mealPlan16 from "@/assets/images/products/meal-plan/meal-plan-16.jpg";
+import mealPlan17 from "@/assets/images/products/meal-plan/meal-plan-17.jpg";
+import mealPlan18 from "@/assets/images/products/meal-plan/meal-plan-18.jpg";
 
 // Shirataki Rice gallery
 import shiratakiRice01 from "@/assets/images/products/shirataki-rice/shirataki-rice-01.png";
@@ -97,7 +118,7 @@ export const products: Product[] = [
       { icon: CookingPot, label: "Made With", value: "Almond flour" },
       { icon: Sandwich, label: "Best For", value: "Sandwiches & toast" },
     ],
-    gallery: [ketoBread01, ketoBread02],
+    gallery: [ketoBread03, ketoBread04, ketoBread05, ketoBread06, ketoBread07, ketoBread08, ketoBread09],
   },
   {
     slug: "meal-plan",
@@ -111,6 +132,23 @@ export const products: Product[] = [
       { icon: UtensilsCrossed, label: "Premium", value: "Prime Ribeye & Salmon" },
       { icon: Sparkles, label: "Result", value: "Juicy, tasty, filling" },
     ],
-    gallery: [mealPlan01, mealPlan02],
+    gallery: [
+      mealPlan03,
+      mealPlan04,
+      mealPlan05,
+      mealPlan06,
+      mealPlan07,
+      mealPlan08,
+      mealPlan09,
+      mealPlan10,
+      mealPlan11,
+      mealPlan12,
+      mealPlan13,
+      mealPlan14,
+      mealPlan15,
+      mealPlan16,
+      mealPlan17,
+      mealPlan18,
+    ],
   },
 ];
