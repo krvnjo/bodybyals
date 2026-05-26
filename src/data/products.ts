@@ -67,6 +67,20 @@ export interface ProductDetail {
   value: string;
 }
 
+export interface OrderLink {
+  platform: "shopee" | "tiktok" | "lazada" | "instagram";
+  label: string;
+  url: string;
+}
+
+// Shared brand store links — update URLs as needed (empty url = shown but not yet linked)
+export const orderLinks: OrderLink[] = [
+  { platform: "shopee", label: "Shopee", url: "https://shopee.ph/bodybyals" },
+  { platform: "tiktok", label: "TikTok Shop", url: "https://www.tiktok.com/@bodybyals" },
+  { platform: "lazada", label: "Lazada", url: "" },
+  { platform: "instagram", label: "Instagram", url: "https://www.instagram.com/bodybyals/" },
+];
+
 export interface Product {
   slug: string;
   image: ImageMetadata;

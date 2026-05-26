@@ -305,9 +305,106 @@ html.lightbox-open body {
   }
 }
 
+/* Product detail page — "Order Now" links */
+.order-links {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.order-links .section-title {
+  margin-bottom: 30px;
+}
+
+.order-links__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.order-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
+}
+
+.order-link:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  opacity: 0.95;
+}
+
+.order-link--disabled {
+  cursor: default;
+}
+
+.order-link--disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.order-link__icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.order-link__icon svg,
+.order-link__icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.order-link--lazada .order-link__icon img {
+  width: 32px;
+  height: 32px;
+  display: block;
+  border-radius: 7px;
+}
+
+.order-link--shopee {
+  background: #ee4d2d;
+}
+
+.order-link--tiktok {
+  background: #010101;
+}
+
+.order-link--lazada {
+  background: #1a1f71;
+}
+
+.order-link--instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+@media (max-width: 480px) {
+  .order-links__list {
+    gap: 10px;
+  }
+  .order-link {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+  .order-link__icon svg {
+    width: 17px;
+    height: 17px;
+  }
+}
+
 /* Product detail page — Pinterest-style masonry gallery */
 .page-team {
-  padding: 100px 0 70px;
+  padding: 50px 0 70px;
 }
 
 .masonry-gallery {

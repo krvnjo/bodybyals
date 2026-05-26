@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import PageHeader from "../../components/PageHeader.astro";
 import Lightbox from "../../components/Lightbox.astro";
+import OrderLinks from "../../components/OrderLinks.astro";
 import { Image, getImage } from "astro:assets";
 import { products } from "@/data/products";
 
@@ -29,6 +30,8 @@ const lightboxImageUrls = fullImages.map((i) => i.src);
   <!-- Page Product Gallery Start -->
   <div class="page-team">
     <div class="container">
+      <OrderLinks />
+
       <div class="masonry-gallery">
         {
           product.gallery.map((image, index) => (
