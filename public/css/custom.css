@@ -103,7 +103,6 @@
   }
 }
 
-
 /* Tighter gap between transformations carousel and testimonials grid */
 .page-testimonials {
   padding-top: 20px;
@@ -212,8 +211,12 @@ html.lightbox-open body {
 }
 
 @keyframes lightbox-fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .lightbox__image {
@@ -241,7 +244,9 @@ html.lightbox-open body {
   text-align: center;
   cursor: pointer;
   opacity: 0.7;
-  transition: opacity 0.2s, color 0.2s;
+  transition:
+    opacity 0.2s,
+    color 0.2s;
 }
 
 .lightbox__close:hover {
@@ -265,7 +270,9 @@ html.lightbox-open body {
   text-align: center;
   cursor: pointer;
   opacity: 0.65;
-  transition: opacity 0.2s, color 0.2s;
+  transition:
+    opacity 0.2s,
+    color 0.2s;
 }
 
 .lightbox__nav:hover {
@@ -312,7 +319,74 @@ html.lightbox-open body {
 }
 
 .order-links .section-title {
-  margin-bottom: 30px;
+  margin-bottom: 24px;
+}
+
+.order-links__note {
+  max-width: 720px;
+  margin: 0 auto 30px;
+}
+
+.order-links__contact {
+  margin-top: 24px;
+}
+
+.order-link--form {
+  background: var(--accent-color);
+}
+
+.order-links__desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin-bottom: 12px;
+}
+
+.order-links__line {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-bottom: 4px;
+}
+
+.order-links__line:last-child {
+  margin-bottom: 0;
+}
+
+/* "How to Get Started" block (Meal Plan only) */
+.order-getstarted {
+  max-width: 720px;
+  margin: 36px auto 0;
+  padding: 28px 30px;
+  text-align: center;
+  background: var(--bg-color, #f9fafb);
+  border: 1px solid var(--divider-color);
+  border-radius: 16px;
+}
+
+.order-getstarted__title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.order-getstarted__text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+  .order-links__desc,
+  .order-links__line,
+  .order-getstarted__text {
+    font-size: 13px;
+  }
+  .order-getstarted {
+    padding: 22px 18px;
+  }
 }
 
 .order-links__list {
@@ -361,15 +435,13 @@ html.lightbox-open body {
 
 .order-link__icon svg,
 .order-link__icon img {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
+  display: block;
 }
 
 .order-link--lazada .order-link__icon img {
-  width: 32px;
-  height: 32px;
-  display: block;
-  border-radius: 7px;
+  border-radius: 6px;
 }
 
 .order-link--shopee {
@@ -402,7 +474,6 @@ html.lightbox-open body {
   }
 }
 
-/* Product detail page — Pinterest-style masonry gallery */
 .page-team {
   padding: 50px 0 70px;
 }
@@ -462,7 +533,6 @@ html.lightbox-open body {
   }
 }
 
-/* Mobile menu toggler — match brand green like the Get Started CTA */
 .navbar-toggler {
   background-color: var(--accent-color);
   border: none;

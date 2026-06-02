@@ -2,6 +2,13 @@
 import { Image } from "astro:assets";
 import { orderLinks } from "@/data/products";
 import lazadaLogo from "@/assets/images/icons/lazada.png";
+
+interface Props {
+  note?: string;
+  getStartedForm?: string;
+}
+
+const { note, getStartedForm } = Astro.props;
 ---
 
 <div class="order-links">
@@ -9,7 +16,41 @@ import lazadaLogo from "@/assets/images/icons/lazada.png";
     <h3 class="wow fadeInUp">Where to Order</h3>
     <h2 class="text-anime-style-3">Take the first step toward your goals —<br />order on your favorite platform</h2>
   </div>
+
+  {
+    note && (
+      <div class="order-links__note">
+        <p class="order-links__desc">{note}</p>
+      </div>
+    )
+  }
   <div class="order-links__list">
+    {
+      getStartedForm && (
+        <a
+          href={getStartedForm}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="order-link order-link--form"
+          aria-label="Meal Plan Packages">
+          <span class="order-link__icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true">
+              <path d="M9 2h6a1 1 0 0 1 1 1v1h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2V3a1 1 0 0 1 1-1z" />
+              <path d="M9 4h6" />
+              <path d="M8 11h8M8 15h5" />
+            </svg>
+          </span>
+          <span class="order-link__label">Meal Plan Packages</span>
+        </a>
+      )
+    }
     {
       orderLinks.map((link) => (
         <a
@@ -39,6 +80,19 @@ import lazadaLogo from "@/assets/images/icons/lazada.png";
           <span class="order-link__label">{link.label}</span>
         </a>
       ))
+    }
+  </div>
+
+  <div class="section-footer-text order-links__contact">
+    {
+      getStartedForm ? (
+        <p>
+          📝 To order, fill out our Google Form to view available plans. For inquiries, message us directly on Facebook
+          or Instagram.
+        </p>
+      ) : (
+        <p>📍 Available for pick-up in Quezon City. Just message us directly on Facebook or Instagram.</p>
+      )
     }
   </div>
 </div>

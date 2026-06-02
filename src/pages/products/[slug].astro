@@ -30,7 +30,7 @@ const lightboxImageUrls = fullImages.map((i) => i.src);
   <!-- Page Product Gallery Start -->
   <div class="page-team">
     <div class="container">
-      <OrderLinks />
+      <OrderLinks note={product.orderNote} getStartedForm={product.getStartedForm} />
 
       <div class="masonry-gallery">
         {

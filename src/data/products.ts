@@ -77,7 +77,7 @@ export interface OrderLink {
 export const orderLinks: OrderLink[] = [
   { platform: "shopee", label: "Shopee", url: "https://shopee.ph/bodybyals" },
   { platform: "tiktok", label: "TikTok Shop", url: "https://www.tiktok.com/@bodybyals" },
-  { platform: "lazada", label: "Lazada", url: "" },
+  { platform: "lazada", label: "Lazada", url: "https://www.lazada.com.ph/shop/bodybyals/" },
   { platform: "instagram", label: "Instagram", url: "https://www.instagram.com/bodybyals/" },
 ];
 
@@ -88,6 +88,8 @@ export interface Product {
   description: string;
   details: ProductDetail[];
   gallery: ImageMetadata[];
+  orderNote: string;
+  getStartedForm?: string;
 }
 
 export const products: Product[] = [
@@ -119,6 +121,8 @@ export const products: Product[] = [
       shiratakiRice15,
       shiratakiRice16,
     ],
+    orderNote:
+      "Our Premium Dry Shirataki Rice is a virtually calorie-free, low-carb rice alternative made from konjac. High in fiber and quick to prepare, it's an easy everyday swap that keeps you full while supporting your fitness and nutrition goals.",
   },
   {
     slug: "keto-bread",
@@ -133,13 +137,15 @@ export const products: Product[] = [
       { icon: Sandwich, label: "Best For", value: "Sandwiches & toast" },
     ],
     gallery: [ketoBread03, ketoBread04, ketoBread05, ketoBread06, ketoBread07, ketoBread08, ketoBread09],
+    orderNote:
+      "BodyByALS Keto Bread is made fresh with no preservatives, so immediate pick-up is highly recommended. Please store it in the freezer upon receipt to prevent mold and keep it fresh!",
   },
   {
     slug: "meal-plan",
     image: mealPlan01,
     title: "Meal Plan",
     description:
-      "Our Meal Plan is low-carb and high-protein, also known as the Insulin Sensitivity Reset Diet, designed to improve insulin sensitivity, reduce inflammation, and support overall metabolic health. We focus on balancing hormones, not counting calories, so you can enjoy every meal while staying on track. Premium packages feature USDA Prime Ribeye Steak and Salmon, while superior packages include a variety of beef, chicken, salads, and more.",
+      "Our Meal Plan is low-carb and high-protein, also known as the Insulin Sensitivity Reset Diet, designed to improve insulin sensitivity, reduce inflammation, and support overall metabolic health. We focus on balancing hormones, not counting calories, so you can enjoy every meal while staying on track. Premium packages feature USDA Prime Ribeye Steak and Salmon, while superior packages include a variety of beef, chicken, salads, and more. ",
     details: [
       { icon: Salad, label: "Diet Type", value: "Low-carb, high-protein" },
       { icon: Droplets, label: "Focus", value: "Hormone balance" },
@@ -164,5 +170,9 @@ export const products: Product[] = [
       mealPlan17,
       mealPlan18,
     ],
+    orderNote:
+      "We focus on balancing hormones, not counting calories. Our meals are designed to help correct insulin resistance and support better blood sugar control, making your health journey sustainable and effective.",
+    getStartedForm:
+      "https://docs.google.com/forms/d/e/1FAIpQLSf2JkNhUcEWenHeZQXCpDd6wqfYeYZXgPv97NXHM0um8Pt6ew/viewform",
   },
 ];
